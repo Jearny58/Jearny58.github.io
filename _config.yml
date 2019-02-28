@@ -5,7 +5,7 @@
 
 # If you are building a simple GitHub user page (https://username.github.io) then use these settings:
 url: "https://Jearny58.github.io"
-baseurl: "https://Jearny58.github.io"
+baseurl: ""
 
 # If you are building a GitHub project page then use these settings:
 #url: "http://username.github.io/projectname"
@@ -56,9 +56,9 @@ footer-link-col: "#404040"
 # Alternatively, the navbar, footer, and page background can be set to use background images
 # instead of colour
 
-navbar-img: "/img/jaanus-jagomagi-1318706-unsplash.jpg"
+# navbar-img: "/img/jaanus-jagomagi-1318706-unsplash.jpg"
 # footer-img: "/img/bgimage.png"
-# page-img: "/img/bgimage.png"
+ page-img: "/img/jaanus-jagomagi-1318706-unsplash.jpg"
 
 # --- Footer options --- #
 
