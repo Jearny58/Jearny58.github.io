@@ -4,8 +4,8 @@
 # baseurl is the website's URL without the hostname
 
 # If you are building a simple GitHub user page (https://username.github.io) then use these settings:
-url: "https://username.github.io"
-baseurl: ""
+url: "https://Jearny58.github.io"
+baseurl: "https://Jearny58.github.io"
 
 # If you are building a GitHub project page then use these settings:
 #url: "http://username.github.io/projectname"
@@ -14,10 +14,10 @@ baseurl: ""
 # Of course don't forget to change the username and projectname to YOUR username and project
 
 # Name of website
-title: My website
+title: Go Joe Go!
 
 # Short description of your site
-description: A virtual proof that name is awesome!
+description: Learning, improving and evolving one data set at a time
 
 # --- Navigation bar options --- #
 
@@ -72,13 +72,13 @@ author:
 # If you want to add a new link that isn't here, you'll need to also edit the file _data/SocialNetworks.yml
 social-network-links:
   rss: true
-  email: "someone@example.com"
+  email: "jearnshaw58@gmail.com"
   facebook: daattali
-  github: daattali
+  github: Jearny58
   twitter: daattali
 #  reddit: yourname
 #  google-plus: +DeanAttali
-#  linkedin: daattali
+  linkedin: jearnshaw58
 #  xing: yourname
 #  stackoverflow: "3943160/daattali"
 #  snapchat: deanat78
