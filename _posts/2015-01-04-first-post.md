@@ -8,7 +8,9 @@ Finally got up the courage to start this! We all got to start somewhere and this
 
 First, let's get the introduction out of the way. 
 
-My name is Joe, and ![iron_man_playboy.gif](/img/iron_man_playboy.gif)
+My name is Joe, and I'm a...
+
+![iron_man_playboy.gif](/img/iron_man_playboy.gif)
 
 
 
