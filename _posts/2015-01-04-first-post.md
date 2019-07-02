@@ -2,6 +2,13 @@
 layout: post
 title: First post!
 image: /img/hello_world.jpeg
+published: true
 ---
+Finally got up the courage to start this! We all got to start somewhere and this is my first step (at least when it comes to blogging...). 
 
-This is my first post, how exciting!
+First, let's get the introduction out of the way. 
+
+My name is Joe, and ![iron_man_playboy.gif]({{site.baseurl}}/img/iron_man_playboy.gif)
+
+
+
