@@ -3,6 +3,7 @@ layout: post
 title: First post!
 image: /img/hello_world.jpeg
 published: true
+date: '2019-07-01'
 ---
 ## The Journey Begins: July 1st, 2019
 
@@ -45,9 +46,4 @@ In my current role as a CrossFit coach, my primary function is to help others cr
 
 Now, what's next? Well, these three 'dots' of wisdom -- the power of today's technology, the value of continual learning and helping others optimize their lives -- have culminated into a desire to try and help as many people as possible through technology. After taking Springboard's Introduction to Data Science course, I discovered that as a Data Scientist, I would have the potential to do just that. 
 
-This next chapter has just begun, and there is still much to learn, but I'm incredibly excited to see where this journey takes me. 
-
-
-
-
-
+This next chapter has just begun, and there is still much to learn, but I'm incredibly excited to see where this journey takes me.
