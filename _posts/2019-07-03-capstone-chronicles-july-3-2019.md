@@ -32,3 +32,38 @@ The first thing I want to explore is adding a new sample of data after each roun
 Another thing to potentially explore is the model architecture. The past few days I have been utilizing the [DenseNet121](https://www.kaggle.com/pytorch/densenet121) neural network architecture, which has produced the best performance so far (and was Stanford's architecture of choice). However, ResNet152 has shown decent performance (low 0.70 AUROC scores) so it might be worth revisiting. Additionally, [DenseNet161](https://www.kaggle.com/pytorch/densenet161) may be worth a shot as well but I'll have to be careful in regards to memory usage (DenseNet is very computationally expensive!). 
 
 Additionally, I have to continue with the EDA of the data set. It could potentially provide some insights into how to best approach uncertainty within the data set.
+
+## Research on Metrics
+
+Up to this point I've been using error rate and AUROC as two primary metrics for judging the performance of my model. However, I think I need to start assessing performance on a more granular level, namely by potentially utilizing precision, recall of F1. The following is my research on these respective metrics. 
+
+Precision is the number of __True Positive__ observations divided by the sum of the __True Positive__ **and** __False Positive__ (i.e. the __total predicted positive__). A false positive in our situation would be classifying an image as positive for a specific pathology, when in fact it is negative. 
+- The benefit of Precision is that it shows us how accurate the model is out of the predicted positive. This is extremely immportant when considering that the costs of a false positive in medicine can mean a diagnosis of a non-existent pathology. This can be extremely expensive (due to things like unneccasary tests) and dangerous (treating for a non-existent pathology). 
+
+Recall is the number of __True Positive__ observations divided by the sum of the __True Positive__ **and** __False Negative__ (i.e. the __total of actual positives__). A false negative in our situation would mean classifying an image as negative (i.e. no presence of specific pathology) when in fact the image **does** indicate the presence of said pathology! This is also extremely important in healthcare as this situation prevents the individual from getting the necessary treatment. 
+
+Now we're kind of at odds here; in our situation (i.e. classifying pathologies from medical images), both Recall and Precision are important metrics to consider. 
+
+Lastly, there is the __F1 Score__. F1 is the Precision multiplied by the recall divided by the sum of Precision plus Recall, all multiplied by 2. It is a metric that seeks to find a balance between Precision and Recall, especially in the case of an uneven class distribution (which is very much the case when it comes to our medical images as most do not have a pathology). 
+
+## Trial 20
+
+So the set up for the trial 20 notebook was similar to trial 19. Below are the steps I took to set everything up for training:
+1. Loaded in the data via the replicate.load_data() function, which takes as input the data path, a seed number and the percent of the data you want to gather from the original CheXpert data set (default percent is 5%, expressed as 0.05).
+2.  I utilized the binary mapping approach for the uncertain observations, more specifically the __U-Zero__ approach which replaces the -1 value with 0.
+3. Called the replicate.get_src() function which takes as input the sample dataframe, the data path, and the name of the pathology we are focusing on (which in this specific instance was Cardiomegaly) in string format. This gives us a variable named src, which is an ImageList object. 
+4. Feed in src and the image size (we start with 64) to the replicate.get_data() function; this gives us an ImageDataBunch with a training set with 11,576 items (i.e. images) and a validation set of 234 items, and their respective labels. 
+5. For the model, I decided to utilize a pretrained DenseNet121 architecture with both [dropout](http://wiki.fast.ai/index.php/Lesson_3_Notes#Dropout) and [batch normalization](http://wiki.fast.ai/index.php/Lesson_3_Notes#Batch_Normalization). 
+6. Set the learning rate to 0.3, according to learning rate finder plot that test a variety of rates, from 1e-7 to 100. 
+
+### Trial 20 Results
+
+For the first round of training, we saw a very quick improvement in AUROC. It went from a value of ~0.45 in the first epoch to ~0.737 in the third epoch of this iteration. The one thing that stayed though was the error rate, which essentially stayed at 0.29 for every epoch. 
+
+After this iteration, I increased the image size of the same data set to 128x128 and assigned it to the learner. I trained the model again for three epochs and the AUROC went from the low 0.50s to a value of ~0.749, which was a surprising jump. However, the error rate stayed the same at 0.29. 
+
+Essentially the process was to train the model for three epochs at one image size, then increase image size and train further with the same learning rate. I followed this pattern until the image size was 320. Then during the fifth round of training, I utilized the [unfreeze() function](https://docs.fast.ai/basic_train.html#Learner.unfreeze) from fast.ai, which sets every layer group to trainable. The result of this action though was underwhelming, the highest value of AUROC achieved was ~0.71 and the error rate was no different (0.29).
+
+For the sixth and final round of training, I utilized the [freeze() function](https://docs.fast.ai/basic_train.html#Learner.freeze), which sets every layer up to the last as untrainable, but the results were somewhat diappointing. The AUROC hovered between 0.67 to 0.68 and again had an average error rate of 0.29. Additionally, the validation loss was trending upwards while the training loss was trending downwards, indicating that the model might be starting to overfit. 
+
+
