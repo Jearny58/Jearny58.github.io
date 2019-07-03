@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'Capstone Chronicles: July 3, 2019'
 date: '2019-07-03'
 ---
