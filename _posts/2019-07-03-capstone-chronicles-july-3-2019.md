@@ -2,6 +2,7 @@
 layout: post
 published: true
 title: 'Capstone Chronicles: July 3, 2019'
+image: /img/learning_rate.png
 date: '2019-07-03'
 ---
 Let's begin with a little recap of where I currently am in regards to my second capstone project.
