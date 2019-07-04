@@ -4,8 +4,6 @@ published: true
 title: 'Capstone Chronicles: July 3, 2019'
 date: '2019-07-03'
 ---
-## Recap 
-
 Let's begin with a little recap of where I currently am in regards to my second capstone project.
 
 I've experimented with quite a few set-ups in regards to data input for my model. Most of them have involved taking a random sample (~5-10%) of the CheXpert data set.
