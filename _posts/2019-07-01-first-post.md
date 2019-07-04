@@ -5,8 +5,6 @@ image: /img/hello_world.jpeg
 published: true
 date: '2019-07-01'
 ---
-## The Journey Begins: July 1st, 2019
-
 
 Finally got up the courage to start this! We all got to start somewhere and this is my first step, at least when it comes to blogging...
 
