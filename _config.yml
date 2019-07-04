@@ -25,7 +25,7 @@ description: Learning, improving and evolving one data set at a time
 # List of links in the navigation bar
 navbar-links:
   About Me: "aboutme"
-  Blog: "blog"
+  #Blog: "blog"
   #Resources:
   # - Beautiful Jekyll: "http://deanattali.com/beautiful-jekyll/"
   # - Learn markdown: "http://www.markdowntutorial.com/"
