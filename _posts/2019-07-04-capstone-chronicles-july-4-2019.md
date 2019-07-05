@@ -2,6 +2,9 @@
 layout: post
 published: false
 title: 'Capstone Chronicles: July 4, 2019'
+date: '2019-07-04'
+subtitle: Updates from my work on July 4th
+image: /img/ibm_medical_image_analysis.jpeg
 ---
 Another day, some more deep learning!
 
