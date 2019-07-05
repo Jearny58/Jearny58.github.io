@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'Capstone Chronicles: July 4, 2019'
 date: '2019-07-04'
 subtitle: Updates from my work on July 4th
