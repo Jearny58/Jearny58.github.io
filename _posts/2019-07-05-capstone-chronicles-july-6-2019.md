@@ -1,9 +1,10 @@
 ---
 layout: post
 published: false
-title: 'Capstone Chronicles: July 6, 2019'
+title: 'Capstone Chronicles: July 5, 2019'
+date: '2019-07-05'
 ---
-Getting a little bit of a late start to this today, but there has been a minor breakthrough of sorts. 
+Getting a little bit of a late start to this today, but there has been a minor breakthrough of sorts.
 
 One of the entries into the CheXpert competition has made their code available via GitHub, and it primarily served as a tutorial. I walked through it, step-by-step, in my own Jupyter Notebook to see if I got similar results. After a few tweaks (the data wasn't loading correctly), I was able to get everything up and running. To my surprise, the results were near-identical, and were better than anything I'd got up to this point!
 
@@ -18,6 +19,10 @@ Today was frustrating, to say the least. A lot of error messages and confusion. 
 These days are going to happen, and the realization of this fact and that progress is not linear are two lessons that were reinforced during today's work. 
 
 Looking to tomorrow, I think it might be useful to take a step back and revisit one of my older notebooks that focused on identifying only one pathology. Additionally, another thought that came to me was taking a look at batch size; in the walkthrough, the batch size was calculated a little differently, and that may have had an effect because during its training it did go slow and the number of total batches seemed awfully low. 
+
+In summary, this was me most of the day...
+
+![]({{site.baseurl}}/img/big_lebowski_confused.gif)
 
 ## Review of [CheXpert Walkthrough](https://github.com/simongrest/chexpert-entries/blob/master/replicating_chexpert.ipynb)
 
