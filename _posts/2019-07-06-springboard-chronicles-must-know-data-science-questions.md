@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'Springboard Chronicles: Must-Know Data Science Questions'
 image: /img/question_mark.jpeg
 date: '2019-07-06'
