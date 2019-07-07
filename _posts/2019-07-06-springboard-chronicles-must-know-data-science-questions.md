@@ -2,8 +2,11 @@
 layout: post
 published: false
 title: 'Springboard Chronicles: Must-Know Data Science Questions'
+image: /img/question_mark.jpeg
+date: '2019-07-06'
+subtitle: Notes From KDNuggets "21 Must-Know Data Science Interview Questions" article
 ---
-The following is my review of KDNuggets article titled __21 Must-Know Data Science Interview Questions and Answers__, by Gregory Piatetsky. 
+The following is my review of KDNuggets article titled __[21 Must-Know Data Science Interview Questions and Answers](https://www.kdnuggets.com/2016/02/21-data-science-interview-questions-answers.html)__, by Gregory Piatetsky. 
 
 This is another post that serves more as a reference, in that it will be in a note-taking format, as opposed to a traditional blog post with a beginning, middle, and end. Additionally, the notes will be from the article and other miscellaneous sources, which will be cited. 
 
@@ -213,9 +216,3 @@ For both the options above, we can use either R-squared or mean squared error (a
     - Nested cross-validation (do feature selection on one level, then run entrie method in cross-validation on outer level
     - Adjusting the [False Discovery Rate](https://en.wikipedia.org/wiki/False_discovery_rate)
     - Using the [reusable holdout method](https://www.kdnuggets.com/2015/08/feldman-avoid-overfitting-holdout-adaptive-data-analysis.html)
-
-
-    
-
-
-
