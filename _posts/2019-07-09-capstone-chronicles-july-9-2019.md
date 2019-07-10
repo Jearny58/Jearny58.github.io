@@ -57,5 +57,9 @@ After the function assesses the available memory and assigns the batch size (whi
 
 With our data all set, all we need to do now is create the learner! 
 
+But that will be for another day...which will be tomorrow, most likely...
+
+Until then, this is Joe signing off!
+
 
 
