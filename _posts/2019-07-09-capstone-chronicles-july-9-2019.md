@@ -7,6 +7,9 @@ subtitle: Notes & Updates from my Work on July 9th
 ---
 Yesterday was a great day! It's interesting how you can go awhile with seemingly no progress and then all of a sudden the dots connect, and you wonder where it came from. Every time this happens, I'm always surprised when I shouldn't be. Our minds are great data-crunchers, but sometimes it takes them a little time to find a pattern or recognize a different approach to a particular problem. 
 
+### When your model gets better and better during training...
+![When your model gets better and better during training...]({{site.baseurl}}/img/shaq_cat.gif)
+
 Moving on: yesterday, I tested out a resampling strategy for the CheXpert data set. More specifically, I used undersampling which consists of removing samples from the majority class, which in this case meant removing observations that were negative (i.e., did not indicate the presence of Cardiomegaly, the pathology of focus).
 
 This resulting data set had an exact 50/50 split in terms of negative/positive (0/1) observations. After setting up the data using fast.ai's library, in five rounds of training, I was able to achieve the best results so far, with an AUROC of approximately 0.81 and precision of 0.65 (although it did dip to ~0.61 during the last round of training). 
@@ -57,9 +60,11 @@ After the function assesses the available memory and assigns the batch size (whi
 
 With our data all set, all we need to do now is create the learner! 
 
-But that will be for another day...which will be tomorrow, most likely...
+But that will be for another day...which will most likely be tomorrow...
 
 Until then, this is Joe signing off!
+
+
 
 
 
