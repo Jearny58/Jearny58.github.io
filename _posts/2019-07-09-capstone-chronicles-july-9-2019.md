@@ -1,9 +1,10 @@
 ---
 layout: post
-published: false
+published: true
 title: 'Capstone Chronicles: July 9, 2019'
 date: '2019-07-09'
 subtitle: Notes & Updates from my Work on July 9th
+image: /img/shaq_cat.gif
 ---
 Yesterday was a great day! It's interesting how you can go awhile with seemingly no progress and then all of a sudden the dots connect, and you wonder where it came from. Every time this happens, I'm always surprised when I shouldn't be. Our minds are great data-crunchers, but sometimes it takes them a little time to find a pattern or recognize a different approach to a particular problem. 
 
