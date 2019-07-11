@@ -1,8 +1,10 @@
 ---
 layout: post
-published: false
+published: true
 title: 'Capstone Chronicles: July 10, 2019'
 subtitle: 'Notes & Updates from my work on July 10, 2019'
+date: '2019-07-10'
+image: /img/mr_robot.gif
 ---
 Another day, some more deep learning! 
 
@@ -17,6 +19,10 @@ The initial results with the undersampled data set and DenseNet161 were, and in 
 After failing to work around the memory issues caused by DenseNet161, we iterated again and started a new Jupyter notebook (i.e., Trial 27). Luckily our `sample.py` script makes the grunt work of data cleaning relatively straightforward and quick. Once we got the data cleaned up and into an ImageDataBunch, we began training a DenseNet121 model with a max learning rate of `1e-1`, which was gathered from our learning rate finder plot.
 
 It performed somewhat admirably, achieving an AUROC of 0.807 in only ~18 minutes of training. But then I remembered the other technique we could use in the case of highly unbalanced data: oversampling. This is the opposite of undersampling, which means that we resample the minority class to match the number of the majority class. Now you may be wondering, how exactly do we 'add' approximately 150k positive images to our data set? Two words: random sampling!
+
+### That feeling you get when your classification model finally gets an AUROC over 0.80...
+
+![mr_robot]({{site.baseurl}}/img/mr_robot.gif)
 
 In the `sample.py` script there is a function that takes in `train_df` and `valid_df` - similar to the function `undersample_and_prep` - with an additional input called `frac`. What `frac` represents is the fraction of the data because when we use oversampling with the CheXpert data set, we're going to get roughly 360k observations and for training, we only want to take a fraction of that, and the default is set to 50% (or 0.5). 
 
@@ -42,7 +48,4 @@ With that, I'm going to end this post abruptly. I know it is random, but unfortu
 
 Onward and upwards though! It surely won't be my last 'doh!' moment. Right now, I'm going through the Trial 28 notebook and re-training the model (with some slight learning rate tweaks). We'll see how that goes, and I'll report back tomorrow! 
 
-Until then, Joe out! 
-
-
-
+Until then, Joe out!
