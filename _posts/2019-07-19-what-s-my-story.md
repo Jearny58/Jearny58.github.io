@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: What's My Story?
 image: /img/stevejobs.jpg
 date: '2019-07-19'
