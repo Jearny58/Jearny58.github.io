@@ -2,6 +2,9 @@
 layout: post
 published: false
 title: What's My Story?
+image: /img/stevejobs.jpg
+date: '2019-07-19'
+subtitle: The First Iteration of My Life
 ---
 "So tell me a little bit more about your background..."
 
@@ -17,7 +20,9 @@ Over these past few days, this simple request has made me come to terms with the
 
 Firstly, have you listened to Steve Jobs 2005 Stanford commencement speech? If you haven't, I highly recommend you check it out [here](https://www.youtube.com/embed/UF8uR6Z6KLc?start=47).
 
-Have you watched it yet? I'm in no rush...
+### Have you watched it yet? I'm in no rush...
+
+![stevejobs.jpg]({{site.baseurl}}/img/stevejobs.jpg)
 
 For those of you that have watched it, you know that one of the stories Jobs talks about is his decision to drop out of Reed College. I imagine for a lot of people, especially in that particular era (the early 70s), would not consider this a "smart" decision. After all, a college degree is the way to the American Dream, right...? Plus, Jobs even admitted to being pretty scared upon dropping out, 
 
