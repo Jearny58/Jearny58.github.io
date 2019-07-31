@@ -71,7 +71,7 @@ The only required input for the `prep_data()` function is the path variable, and
 9. Presents further detailed information related to reclassification of uncertain labels, from both pre and post-relabeling.
 10. Returns `train_df` and `valid_df`
 
-### Are you sure about that? - The Approaches to Uncertain Labels
+### Are you sure about that? - Approaches to Uncertain Labels
 
 Before we go any further, I want to take a deep dive into what we did with the uncertain labels within the training set. As mentioned above, we replaced all the Cardiomegaly observations that had a value of -1 with 0. Where did this idea come from? In their [paper](https://arxiv.org/pdf/1901.07031.pdf), the team at Stanford mentions a few different approaches that could be used for the uncertain labels, which include:
 
@@ -87,6 +87,16 @@ While they were not used for this specific project, there are two more advanced 
 So in the end why did I choose to utilize the _U-Zero_ uncertainty approach? Well, it had the second highest performance in terms of AUROC amongst the various approaches, plus its simplicity made it a logical first choice. However, there is one other route that would be interesting to explore in further analysis. During the [exploratory data analysis portion](https://github.com/Jearny58/Springboard-DS-Portfolio/blob/master/capstone_2/exploration/chexpert-eda.ipynb) of this project, we're able to create a random forest model utilizing the data from the training data set that could predict cardiomegaly with an AUROC of 0.896, which is very strong. In theory, we could use this model to relabel the uncertain cardiomegaly observations, which is similar to the self-training approach. It would be interesting to see if this could provide any significant bumps in performance. 
 
 ### Fool Me Once - The Issue of Reproducibility
+
+Since we will be using samples of the data set, it is important that we set the randomization seed for the environment. This helps not only with the stability of whatever particular environment we're working in, but to keep results consistent across multiple trials. 
+
+To put it more clearly, I'll use a theoretical situation where we're trying to compare the difference between model X and model Y. Each uses a different architectures with model X being a ResNet and model Y being a DenseNet. We train the models and then get the results, with model Y performing slightly better than model X. There's one caveat though: during training, each model utilized a different sample from the data set. Now the question becomes, can you compare accurately assess the performance of the two models? 
+
+The answer is 'not really' because they were trained on different samples. Now model Y could very well be the better performer but you can't say that with too much confidence because the data set it used may have contained better information than model X's data. To fix this situation, you would want to train both model X and model Y on the same sample of the data. If model Y's performance is again higher, than you can more confidently say it is the better of the two. 
+
+So how do we ensure we generate the same random sample? We set the randomization seed. This is done with the following line of code:
+
+
 
 
 
