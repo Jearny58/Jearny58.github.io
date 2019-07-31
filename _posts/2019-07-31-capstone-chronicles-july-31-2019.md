@@ -26,5 +26,22 @@ Before I go any further though, I want to give a shout out a few sources that we
 
 Lastly, to the team at [fast.ai](https://www.fast.ai/), thank you so much for all the work you've done and continue to do for those of us who are interested in learning how to do deep learning! After completing the [Practical Deep Learning for Coders](https://course.fast.ai/) course, I was able to put together this project and generate a model with relatively high performance. There is so much more to learn but you've been instrumental in setting a solid foundation for my future growth so thank you again!
 
-## Starting the Climb
+## Learning To Fly
 
+How many times do you think it took the Wright brothers to get an airplane airbourne? How many years did it take Einstein to develop the Theory of Relativity? Perhaps better yet, how many Jupyter Notebooks did it take Joe Earnshaw to create a good deep learning model?
+
+Like the Wright brothers and Einstein, it wasn't an overnight process that's for sure! 
+
+To start with, there were a few initial aspects we needed to address, including: 
+
+- _Data wrangling_: We needed to make sure the accompanyiny CSVs for the training and validation sets wouldn't hinder the learner. In our case, since this a deep learning computer vision task, the CSVs are not the primary data source however it is always best practice to ensure data is as clean as possible. 
+- _Sampling_: 224,000 images is a lot, and this presented the potential for long training times. We want to be able to iterate quickly and test new techniques without having to wait too long for training. 
+- _Uncertainty_: There were uncertain labels in the training data set, which means the labeller couldn't confidently tell from the medical documentation where there was a certain pathology present or not. We need to determine a strategy to address these observations with the hope of maintaining as much information as possible. 
+- _Reproducibility_: This is a crucial aspect considering that we're going to be randomly sampling from the data. Why is this so important? Well, if we want to accurately compare the performance for two different model architectures, for example, we need to input the same data for both. If this is not done, comparing performance is null and void because you're comparing the models based on two different data sets! 
+- _Performance Metrics_: The team at Stanford utilized AUROC (Area Under the Receiver Operating Characteristics) which we'll definitely use. However, are there any other metrics we can use to help us get a better idea of the models performance? 
+
+### Cowboy Up! - Wrangling the CheXpert Data Set
+
+
+
+any changes we make to the model and this is not possible if we use different data! aspects we change a certain aspect, for example using a ResNet101 architecture versus a DenseNet121, and the
