@@ -86,7 +86,7 @@ While they were not used for this specific project, there are two more advanced 
 
 So in the end why did I choose to utilize the _U-Zero_ uncertainty approach? Well, it had the second highest performance in terms of AUROC amongst the various approaches, plus its simplicity made it a logical first choice. However, there is one other route that would be interesting to explore in further analysis. During the [exploratory data analysis portion](https://github.com/Jearny58/Springboard-DS-Portfolio/blob/master/capstone_2/exploration/chexpert-eda.ipynb) of this project, we're able to create a random forest model utilizing the data from the training data set that could predict cardiomegaly with an AUROC of 0.896, which is very strong. In theory, we could use this model to relabel the uncertain cardiomegaly observations, which is similar to the self-training approach. It would be interesting to see if this could provide any significant bumps in performance. 
 
-### Fool me once... - The Issue of Reproducibility
+### Fool Me Once - The Issue of Reproducibility
 
 
 
