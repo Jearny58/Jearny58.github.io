@@ -44,8 +44,42 @@ To start with, there were a few initial aspects we needed to address, including:
 
 This was arguably the toughest task of the entire project and most of the experimental Jupyter Notebooks were devoted to determining different strategies to get the data in a format suitable for training the deep learning model on. All this experimentation though paid off though and culminated in the creation of the [`sample.py`](https://github.com/Jearny58/Springboard-DS-Portfolio/blob/master/capstone_2/capstone/sample.py) Python script. 
 
-By simply calling `from capstone import sample` we were able to access all the custom functions created to handle wrangling the CheXpert CSV data. However, there was a prerequisite step that we had to take before we could utilize all these handy functions and that was to set the `path` variable. 
+By simply calling `from capstone import sample` we are able to access all the custom functions created to handle wrangling the CheXpert CSV data. However, there is a prerequisite step that has to done before utilizing all these handy functions and that is to set the `path` variable. 
 
-What this variable essentially does is take note of the location of our data, which in this specific case is `'/home/jupyter/springboard-capstone-2/data'`. This was configured using fast.ai's [`Config.data_path()`](https://forums.fast.ai/t/how-to-set-config-data-path-to-pwd/36297), which allows us to create a path both so we can access our data (i.e. the X-rays) and to save our model weights during training. By default it creates a temporary, and hidded, folder called `.fastai` so after a little bit of playing around we were able to set the path to the one mentioned previously. This is where I want to mention that played around with the path is somewhat tricky (and potentially lengthy) ordeal, especially for someone not used to dealing with folders and working directories. Another strategy that could be used here is to set the path variable using the [`os`](https://docs.python.org/3/library/os.html) Python library. There is more documentation for it which will probably make it easier to use as opposed to the `Config.data_path()` technique. 
+What this variable essentially does is take note of the location of our data, which in this specific case is `'/home/jupyter/springboard-capstone-2/data'`. This was configured using fast.ai's [`Config.data_path()`](https://forums.fast.ai/t/how-to-set-config-data-path-to-pwd/36297), which allows us to create a path both so we can access the location where our data (i.e. the X-rays) is stored and to save our model weights during training. By default it creates a temporary, and hidden, folder called `.fastai` but after a little bit of playing around we set the path to the one mentioned above. The main benefit of this is that we were able to access a permanent folder where we had originally stored the data. This version of the CheXpert data set is approximately 11GB, so it would've been extremely time-consuming to have to re-upload it every day to the default temporary folder just to work on it. 
+
+This is where I want to mention though that playing around with the path is somewhat tricky (and potentially lengthy) ordeal, especially for someone not used to dealing with folders and working directories. Another strategy that could be used here is to set the path variable using the [`os`](https://docs.python.org/3/library/os.html) Python library. There is more documentation for it which makes it more approachable as opposed to the `Config.data_path()` technique. 
+
+At this point we now have our `path` variable which is set to `'/home/jupyter/springboard-capstone-2/data'` and this gives us the ability to finally use one of our custom functions! The following code is all we need to address the vast majority of our data wrangling needs:
+
+- `train_df, valid_df = sample.prep_data(path);`
+
+Yes, one line is all we need! How is this possible you may ask? Well do you remember the call we made above, `from capstone import sample`? This command allows us to access the custom functions in the `sample.py` Python script. Pretty cool, huh?!
+
+The only required input for the `prep_data()` function is the path variable, and once it has that it can go to work. Below is the steps it takes to return a cleaned up training and validation pandas DataFrame:
+
+1. Reads in the `train.csv` and `valid.csv` files using `pd.read_csv()` and stores them in `train_df` and `valid_df`, respectively. 
+2. Adds a `valid` column to both data sets, with the value of `False` being assigned to the training set and `True` being assigned to the validation set. 
+3. Extracts the patient id from the `Path` column and assigns to a new column called `patient`. 
+4. Creates a list of all the pathologies and fills any `NaN` values with 0 (which is the same approach that the team at Stanford used). 
+5. Converts all the pathology columns to integer types (were originally floats). 
+6. Gathers the counts of the values (i.e., 0, 1, or -1) in the `Cardiomegaly` column.
+	- As a reminder, this is our target variable, as we're trying to develop a model that detects this particular pathology within the X-rays.
+7. Replaces the -1 (i.e. uncertain) labels within the training set with 0 (i.e. negative) label.
+	- This particular strategy for addressing the uncertain labels was known as `U-Zero` in the Stanford paper. I'll go into further details in a little bit but for now know this strategy produced some of the best results for Stanford's model. 
+8. Asserts that the replacement of uncertain labels to negative was done correctly (i.e. returns a True/False statement). 
+9. Presents further detailed information related to reclassification of uncertain labels, from both pre and post-relabeling.
+10. Returns `train_df` and `valid_df`
+
+### Are you sure about that? - The Approaches to Uncertain Labels
+
+Before we go any further, I want to take a deep dive into what we did with the uncertain labels within the training set. As mentioned above, we replaced all the Cardiomegaly observations that had a value of -1 with 0. Where did this idea come from? In their [paper](https://arxiv.org/pdf/1901.07031.pdf), the team at Stanford mentions a few different approaches that could be used for the uncertain labels, which include:
+
+1. __Ignoring__
+2. __Binary Mapping__
+3. __Self-Training__
+4. __3-Class Classification__
+
+The first one approach, ignoring, is simplest: drop all uncertain labels during training. However, its simplicity is overcome by its potential to induce significant information loss. The second approach, binary mapping, is the one we used. It says to map all uncertain labels to either 0 (_U-Zeroes_, which we used) or 1 (_U-Ones_). This is still relatively simple to implement and allows us to keep all our images. However, there is the potential for distortion due to images being mislabeled (was labeled as negative when in actuality it was positive) which is essentially sending the learner mixed signals and thus degrading its performance. 
 
 
