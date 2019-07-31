@@ -46,4 +46,6 @@ This was arguably the toughest task of the entire project and most of the experi
 
 By simply calling `from capstone import sample` we were able to access all the custom functions created to handle wrangling the CheXpert CSV data. However, there was a prerequisite step that we had to take before we could utilize all these handy functions and that was to set the `path` variable. 
 
+What this variable essentially does is take note of the location of our data, which in this specific case is `'/home/jupyter/springboard-capstone-2/data'`
+
 
