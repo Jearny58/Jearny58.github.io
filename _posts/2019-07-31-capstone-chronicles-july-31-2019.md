@@ -98,6 +98,13 @@ So how do we ensure we generate the same random sample? We set the randomization
 
 `sample.set_seed(58)`
 
+This sets the seed for all of the following modules within our environment:
+
+- [`random.seed`](https://pynative.com/python-random-seed/)
+- [`os.environ['PYTHONHASHSEED']`](https://docs.python.org/3/using/cmdline.html#envvar-PYTHONHASHSEED)
+- [`np.random.seed`](https://docs.scipy.org/doc/numpy-1.15.1/reference/generated/numpy.random.seed.html)
+- Multple components of [`torch`](https://pytorch.org/docs/stable/notes/randomness.html)
+
 
 
 
