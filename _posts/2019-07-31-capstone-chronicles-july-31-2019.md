@@ -35,13 +35,15 @@ Like the Wright brothers and Einstein, it wasn't an overnight process that's for
 To start with, there were a few initial aspects we needed to address, including: 
 
 - _Data wrangling_: We needed to make sure the accompanyiny CSVs for the training and validation sets wouldn't hinder the learner. In our case, since this a deep learning computer vision task, the CSVs are not the primary data source however it is always best practice to ensure data is as clean as possible. 
+- _Reproducibility_: This is a crucial aspect considering that we're going to be randomly sampling from the data. Why is this so important? Well, if we want to accurately compare the performance for two different model architectures, for example, we need to input the same data for both. If this is not done, comparing performance is null and void because you're comparing the models based on two different data sets! 
 - _Sampling_: 224,000 images is a lot, and this presented the potential for long training times. We want to be able to iterate quickly and test new techniques without having to wait too long for training. 
 - _Uncertainty_: There were uncertain labels in the training data set, which means the labeller couldn't confidently tell from the medical documentation where there was a certain pathology present or not. We need to determine a strategy to address these observations with the hope of maintaining as much information as possible. 
-- _Reproducibility_: This is a crucial aspect considering that we're going to be randomly sampling from the data. Why is this so important? Well, if we want to accurately compare the performance for two different model architectures, for example, we need to input the same data for both. If this is not done, comparing performance is null and void because you're comparing the models based on two different data sets! 
 - _Performance Metrics_: The team at Stanford utilized AUROC (Area Under the Receiver Operating Characteristics) which we'll definitely use. However, are there any other metrics we can use to help us get a better idea of the models performance? 
 
 ### Cowboy Up! - Wrangling the CheXpert Data Set
 
+This was arguably the toughest task of the entire project and most of the experimental Jupyter Notebooks were devoted to determining different strategies to get the data in a format suitable for training the deep learning model on. All this experimentation though paid off though and culminated in the creation of the [`sample.py`](https://github.com/Jearny58/Springboard-DS-Portfolio/blob/master/capstone_2/capstone/sample.py) Python script. 
+
+By simply calling `from capstone import sample` we were able to access all the custom functions created to handle wrangling the CheXpert CSV data. However, there was a prerequisite step that we had to take before we could utilize all these handy functions and that was to set the `path` variable. 
 
 
-any changes we make to the model and this is not possible if we use different data! aspects we change a certain aspect, for example using a ResNet101 architecture versus a DenseNet121, and the
