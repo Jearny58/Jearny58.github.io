@@ -82,4 +82,12 @@ Before we go any further, I want to take a deep dive into what we did with the u
 
 The first one approach, ignoring, is simplest: drop all uncertain labels during training. However, its simplicity is overcome by its potential to induce significant information loss. The second approach, binary mapping, is the one we used. It says to map all uncertain labels to either 0 (_U-Zeroes_, which we used) or 1 (_U-Ones_). This is still relatively simple to implement and allows us to keep all our images. However, there is the potential for distortion due to images being mislabeled (was labeled as negative when in actuality it was positive) which is essentially sending the learner mixed signals and thus degrading its performance. 
 
+While they were not used for this specific project, there are two more advanced approaches that could be undertaken to address the uncertainty: self-training and 3-class classification. With the self-training approach, you train an initial model using the ignoring method until it reaches some performance threshold and using this model, relabel the uncertain labels with either 0 or 1. 3-class classification takes the next step and treats the uncertain labels as their own class, turning what was a binary classification problem into a multi-class one (as indicated by its name). 
+
+So in the end why did I choose to utilize the _U-Zero_ uncertainty approach? Well, it had the second highest performance in terms of AUROC amongst the various approaches, plus its simplicity made it a logical first choice. However, there is one other route that would be interesting to explore in further analysis. During the [exploratory data analysis portion](https://github.com/Jearny58/Springboard-DS-Portfolio/blob/master/capstone_2/exploration/chexpert-eda.ipynb) of this project, we're able to create a random forest model utilizing the data from the training data set that could predict cardiomegaly with an AUROC of 0.896, which is very strong. In theory, we could use this model to relabel the uncertain cardiomegaly observations, which is similar to the self-training approach. It would be interesting to see if this could provide any significant bumps in performance. 
+
+### Fool me once... - The Issue of Reproducibility
+
+
+
 
