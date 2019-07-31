@@ -113,7 +113,18 @@ To be blunt, the models weren't very good during the early stages of this projec
 
 Realizing the fallacy of my original though process, I decided to look into resampling strategies, namely over and under-sampling. Both involve randomly sampling from the data set, but approach it from different perspectives: under-sampling involves removing samples from the majority class to match the minority class while over-sampling is the opposite, adding more examples from the minority class until it matches the majority class. 
 
-After initial exploration with both techniques, oversampling tended to produce slightly better results so it was the approach we primarily used going forward. 
+After initial exploration with both techniques, oversampling tended to produce slightly better results so it was the approach we used primarily. This process was accomplished using the following line of code: `sample.oversample_and_prep(train_df, valid_df, 0.3);`.
+
+Notice this is another function from the `sample.py` Python script. Below is a little more detail on what `oversample_and_prep()` does on the backend. Quick note: notice this function takes in three arguments, `train_df` (the training data set), `valid_df` (the validation set), and `0.3` which represents the fraction of the oversampled data set that will be returned (0.3 representing 30%). 
+
+1. Starts by gathering the number of observations labeled with negative (0) and positive (1) labels and stores them in the variables `count_class_0` and `count_class_1`, respectively. 
+2. Divides `train_df` into two separate DataFrames - `df_class_0` & `df_class_1` - containing just the negative observations and the other just the positive observations, respectively. 
+	- In addition, outputs the shape of each new DataFrame.
+3. Using the [`sample()`](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sample.html) function, samples with replacement from `df_class_1` according to the count of negative observations `count_class_0`. 
+4. Concats the `df_class_0`, containing only the negative observations, with the oversampled DataFrame generated in step 3. 
+	- This returns a data set of nearly 400,000 observations! Remember we want to iterate quickly, which means that we then...
+5. Take a 30% sample, as represented by our original argument of `0.3`, of the combined data set and then reset the index.
+
 
 
 
