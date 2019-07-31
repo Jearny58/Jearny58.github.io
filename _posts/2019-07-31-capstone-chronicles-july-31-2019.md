@@ -94,7 +94,9 @@ To put it more clearly, I'll use a theoretical situation where we're trying to c
 
 The answer is 'not really' because they were trained on different samples. Now model Y could very well be the better performer but you can't say that with too much confidence because the data set it used may have contained better information than model X's data. To fix this situation, you would want to train both model X and model Y on the same sample of the data. If model Y's performance is again higher, than you can more confidently say it is the better of the two. 
 
-So how do we ensure we generate the same random sample? We set the randomization seed. This is done with the following line of code:
+So how do we ensure we generate the same random sample? We set the randomization seed. This is done through our imported `sample.py` script with the following line of code:
+
+`sample.set_seed(58)`
 
 
 
