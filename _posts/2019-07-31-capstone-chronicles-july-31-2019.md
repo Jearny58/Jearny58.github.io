@@ -105,6 +105,10 @@ This sets the seed for all of the following modules within our environment:
 - [`np.random.seed`](https://docs.scipy.org/doc/numpy-1.15.1/reference/generated/numpy.random.seed.html)
 - Multple components of [`torch`](https://pytorch.org/docs/stable/notes/randomness.html)
 
+In summary, by using this function we're maximizing our reproducibility to give us more confidence in determining what might be helping or hurting model performance.
+
+
+
 
 
 
