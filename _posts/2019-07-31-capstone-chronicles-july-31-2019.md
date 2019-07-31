@@ -105,9 +105,15 @@ This sets the seed for all of the following modules within our environment:
 - [`np.random.seed`](https://docs.scipy.org/doc/numpy-1.15.1/reference/generated/numpy.random.seed.html)
 - Multple components of [`torch`](https://pytorch.org/docs/stable/notes/randomness.html)
 
-In summary, by using this function we're maximizing our reproducibility to give us more confidence in determining what might be helping or hurting model performance.
+In summary, by using this function we're maximizing our reproducibility which gives us more confidence in determining what might be helping or hurting a respective model's performance.
 
+### To Over or Under-sample? Dealing with Unbalanced Data
 
+To be blunt, the models weren't very good during the early stages of this project. At first, I was a little confused by this but then I decided to test the hypothesis that the unbalanced data might be negatively impacting the model's performance. The reason I did not address this imbalance upfront was due to the assumption that the deep learning model would account for this. However, with ~88% of the observations being negative, I realize how misguided my initial approach was. 
+
+Realizing the fallacy of my original though process, I decided to look into resampling strategies, namely over and under-sampling. Both involve randomly sampling from the data set, but approach it from different perspectives: under-sampling involves removing samples from the majority class to match the minority class while over-sampling is the opposite, adding more examples from the minority class until it matches the majority class. 
+
+After initial exploration with both techniques, oversampling tended to produce slightly better results so it was the approach we primarily used going forward. 
 
 
 
