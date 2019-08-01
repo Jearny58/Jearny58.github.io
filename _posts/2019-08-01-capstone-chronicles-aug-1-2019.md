@@ -74,7 +74,11 @@ In cell block below the `get_data()` call we can see the output of `data`. We ca
 
 ## It's Alive - Creating the DenseNet Model
 
+Now let's take a look at the code block underneath the _Create DenseNet Model_ in the [`trial30`](https://github.com/Jearny58/Springboard-DS-Portfolio/blob/master/capstone_2/trial30.ipynb) notebook. 
 
+`learn = cnn_learner(data=data, base_arch=models.densenet121, 
+                    metrics=[AUROC(), Recall(), Precision(), error_rate],
+                    pretrained=True, ps=0.5, bn_final=True)`
 
     
     
