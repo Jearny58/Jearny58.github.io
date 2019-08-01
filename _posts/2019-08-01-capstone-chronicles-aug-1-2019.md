@@ -72,7 +72,7 @@ Now that we're familiar with the inputs, we can see what `get_data()` does with 
 
 In cell block below the `get_data()` call we can see the output of `data`. We can see that it is an `ImageDataBunch` that contains a training set of 117,848 items and a validation set of 234 items. Now it's time to create our deep learning model! 
 
-## It's Alive - Creating the DenseNet Model
+## It's Alive - Bringing the DenseNet To Life
 
 Now let's take a look at the code block underneath the _Create DenseNet Model_ in the [`trial30`](https://github.com/Jearny58/Springboard-DS-Portfolio/blob/master/capstone_2/trial30.ipynb) notebook. 
 
@@ -89,6 +89,8 @@ The second argument, `base_arch`, is the architecture (i.e. backbone) of the dee
 ### CNN's and How DenseNet is (Slightly) Different
 
 Before we dive into what a convolutional neural network is, I want to ask the following question: __what makes up the image below?__
+
+![eagle_dl.jpeg]({{site.baseurl}}/img/eagle_dl.jpeg)
 
 
     
