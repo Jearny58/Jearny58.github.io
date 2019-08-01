@@ -47,7 +47,37 @@ We now have a proper `ImageList` however, we still have one more step which is t
 
 `data = replicate.get_data(320, src, default_trans = False)`
 
-The `get_data()` function takes three arguments: image size, an ImageList, and whether or not we want the default fast.ai image transformations. The last aspect - image transformations - is perhaps better known as [_data augmentation_](https://docs.fast.ai/vision.transform.html#Data-augmentation), which applies small random transformations to the images by doing such things as flipping them or making them brighter, just to name a few, without changing the pixel values. By utilizing data augmentation we can potentially help our model to generize better to new images. 
+The `get_data()` function takes three arguments: image size, an ImageList, and whether or not we want the default fast.ai image transformations. For the image size we utilized `320`, which is the same size used by the team at Stanford; next we pass in our `src` ImageList we created in the previous step to locate the images.
+
+The last aspect - image transformations - is perhaps better known as [_data augmentation_](https://docs.fast.ai/vision.transform.html#Data-augmentation), which applies small random transformations to the images by doing such things like flipping them or making them brighter, just to name a few, without changing the pixel values. By utilizing data augmentation we can potentially help our model to generize better to new images. 
+
+Now that we're familiar with the inputs, we can see what `get_data()` does with them on the back-end. 
+
+1. Assigns batch size to either 32 or 16, based on available GPU memory.
+	- Memory issues were pretty common during this project which is the primary motivation for including this 'check'. 
+    - Batch size 'is a hyperparameter that defines the number of samples to work through before updating the internal model parameters'. [(Source)](https://machinelearningmastery.com/difference-between-a-batch-and-an-epoch/)
+    - Essentially it is the number of images we're going to feed into the model at a time before it updates its weights. 
+    - Most of the time it set batch size equal to 16, which is technically called a 'mini-batch'.
+    - [This article](https://machinelearningmastery.com/gentle-introduction-mini-batch-gradient-descent-configure-batch-size/) offers a great introduction into how batch size works within deep learning. 
+2. With `default_trans` equal to `False`, we use a minimal amount of data augmentation. The only random transformations that will be applied are a slight increase in lighting. 
+	- I believed this to be the best approach because medical images are never altered outside of brightness (at least to my knowledge). 
+	- If this had been set to `True`, there would have been more data augmentation involved. 
+3. Sets image size equal to 320 and padding equal to `zeros`. 
+	- Padding has to do with how we treat missing pixels within the images (which can result from applying transformations like a rotation). 
+    - By setting it equal to `zeros` we're telling it to input any missing pixels as black. 
+4. Convert the original `ImageList` into a [`DataBunch`](https://docs.fast.ai/basic_data.html#DataBunch) that can then be passed into the PyTorch `Dataloader`.
+	- Binds training, validation and test sets into a single data object. 
+5. Normalizes the data using `imagenet_stats`. 
+6. Returns the [`ImageDataBunch`](https://docs.fast.ai/vision.data.html#Computer-vision-data) stored in the variable `data`.
+
+In cell block below the `get_data()` call we can see the output of `data`. We can see that it is an `ImageDataBunch` that contains a training set of 117,848 items and a validation set of 234 items. Now it's time to create our deep learning model! 
+
+## It's Alive - Creating the DenseNet Model
+
+
+
+    
+    
 
 
 First we utilize fast.ai's [`ImageList`](https://docs.fast.ai/vision.data.html#ImageList) class, which will allow us to turn an image file in `Path` object into an `Image` object. We're going to create this `ImageList` from our `full_df` using the `from_df()` function
