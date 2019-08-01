@@ -97,6 +97,7 @@ One word: __pixels__! Or more specifically a _matrix_ (which is essentially a sq
 Below is a little better example of what is going on underneath the image, so to speak. 
 
 ![](/img/matrix_pixel_values.png)
+[_Source_](https://link.springer.com/article/10.1007/s13244-018-0639-9)
 
 As you can see, a black pixel is assigned a value of 0 and a white pixel is assigned a value of 255, with variety of numbers in-between indicating different shades.
 
