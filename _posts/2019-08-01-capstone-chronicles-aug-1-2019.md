@@ -90,13 +90,13 @@ The second argument, `base_arch`, is the architecture (i.e. backbone) of the dee
 
 Before we dive into what a convolutional neural network is, I want to ask the following question: __what makes up the image below?__
 
-![]({{site.baseurl}}//img/eagle_dl.jpeg)
+![]({{site.baseurl}}/img/eagle_dl.jpeg)
 
 One word: __pixels__! Or more specifically a _matrix_ (which is essentially a square-like object) of pixels. 
 
 Below is a little better example of what is going on underneath the image, so to speak. 
 
-![]({{site.baseurl}}//img/matrix_pixel_values.png)
+![]({{site.baseurl}}/img/matrix_pixel_values.png)
 
 
 
