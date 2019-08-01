@@ -1,9 +1,10 @@
 ---
 layout: post
-published: false
+published: true
 title: 'Capstone Chronicles: July 31, 2019'
-subtitle: Writings on My Second Capstone Project
+subtitle: Writings & Comprehensive Analysis for My Second Capstone Project
 date: '2019-07-31'
+image: /img/neural_net_dogs.gif
 ---
 Today I am going to focus on analyzing the process for developing the deep learning model of my second capstone project for Springboard. As a reminder, this project utilizes Stanford's [CheXpert](https://stanfordmlgroup.github.io/competitions/chexpert/) data set, which comprises approximately 224,000 chest x-rays from Stanford Hospital performed between 2002 and 2017. 
 
