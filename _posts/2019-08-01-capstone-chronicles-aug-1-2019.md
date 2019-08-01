@@ -80,7 +80,17 @@ Now let's take a look at the code block underneath the _Create DenseNet Model_ i
                     metrics=[AUROC(), Recall(), Precision(), error_rate],
                     pretrained=True, ps=0.5, bn_final=True)`
 
-    
+By using fast.ai's [`cnn_learner`](https://docs.fast.ai/vision.learner.html#cnn_learner) method we are able to create the learner for our deep learning model! However, as we can see there are quite a number of things being passed to our learner. Let's walk through them one by one. 
+
+The first argument `data` takes in a `DataBunch`. This is where we input the `ImageDataBunch` we just created, which is conveniently stored in the variable `data`. 
+
+The second argument, `base_arch`, is the architecture (i.e. backbone) of the deep learning model. For this project, we used [DenseNet](https://arxiv.org/abs/1608.06993), or a densely connected convolutional (neural) network, with 121 layers. Before we go any further though, let's get high level overview of what is going on with this particular architecture.
+
+### CNN's and How DenseNet is (Slightly) Different
+
+Before we dive into what a convolutional neural network is, I want to ask the following question: __what makes up the image below?__
+
+
     
 
 
