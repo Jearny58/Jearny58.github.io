@@ -92,6 +92,10 @@ Before we dive into what a convolutional neural network is, I want to ask the fo
 
 ![eagle_dl.jpeg]({{site.baseurl}}/img/eagle_dl.jpeg)
 
+That image is a matrix of pixel values, like the one below. 
+
+
+
 
     
 
