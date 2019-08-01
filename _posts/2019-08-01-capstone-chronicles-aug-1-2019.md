@@ -96,7 +96,7 @@ One word: __pixels__! Or more specifically a _matrix_ (which is essentially a sq
 
 Below is a little better example of what is going on underneath the image, so to speak. 
 
-![]({{site.baseurl}}/img/matrix_pixel_values.png)
+
 
 
 
