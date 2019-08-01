@@ -92,12 +92,10 @@ Before we dive into what a convolutional neural network is, I want to ask the fo
 
 ![eagle_dl.jpeg]({{site.baseurl}}/img/eagle_dl.jpeg)
 
-That image is a matrix of pixel values, like the one below. 
+One word: pixels! 
+
+Below is a little better example of what is going on underneath the image, so to speak. 
 
 
 
 
-    
-
-
-First we utilize fast.ai's [`ImageList`](https://docs.fast.ai/vision.data.html#ImageList) class, which will allow us to turn an image file in `Path` object into an `Image` object. We're going to create this `ImageList` from our `full_df` using the `from_df()` function
