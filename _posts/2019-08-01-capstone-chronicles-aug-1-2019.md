@@ -6,8 +6,6 @@ subtitle: Continued Analysis For Second Capstone Project
 date: '2019-08-01'
 image: /img/matrix_pixel_values.png
 ---
-## Today's Focus
-
 I'm going to pick right up where I left off in yesterday's [article](https://jearny58.github.io/2019-07-31-capstone-chronicles-july-31-2019/). I'm hoping to have most of the draft done today, but the world works in mysterious ways. Without further ado, let us jump back in!
 
 ## To Over or Under-sample? Dealing with Unbalanced Data (cont.)
