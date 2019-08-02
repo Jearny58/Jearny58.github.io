@@ -33,13 +33,17 @@ This is where the pink box comes into play. These matrix multiplications are the
 
 The main goal of this convolutional layer is to filter, as it checks for patterns in each section of the image. This brings us to the pooling layer, which is done in a similar way to the convolution in that another kernel is involved except we're attempting to further reduce the spatial size of our convolved feature. There are two primary approachs for pooling - max and average - which either returns the max value or the average of all the values from a particular section covered by the pooling kernel. The last main layer is the activation layer, which takes these linear outputs and squashes them into a range using a nonlinear function like ReLu (rectified linear unit). A ReLu sounds a lot scarier than it really is. Mathematically, it can be defined as _y = max(0,x)_, meaning that if the number is negative it is 0, otherwise it takes whatever value x is. 
 
-The whole process is detailed in the image below.
+Below is visual representation of what is going on with convolutions, pooling and activation layers. 
 
 ![cnn_high_level.png](/img/cnn_high_level.png)
 
 [(Source)](https://media.springernature.com/original/springer-static/image/art%3A10.1007%2Fs13244-018-0639-9/MediaObjects/13244_2018_639_Fig1_HTML.png)
 
-Now the convolutional and pooling layer together form a layer of a neural network. Most of the time, there are many of these layers in any convolutional neural network, with 100+ layers not being uncommon for more complicated data (like medical images). 
+Now take note: there are multiple convolutions, ReLUs and pooling layers above. Most convolutional neural networks have multiple layers, with 100+ layers not being uncommon for more complicated input images (like medical images). Additionally you may be wondering what is going on at the end of the picture with the 'FC' columns and back propagation. The FC's are the fully connected layers, which take an input from the previous layer and outputs a vector with N dimensions, with N representing the number of classes the model has to choose from. For example, if you were trying to determine whether an image was of a cat or a dog, N would be equal to 2 (i.e. cat represents one potential class, and dog represents another potential class). What is ouput to this N-dimensional vector is not a 'yes' or a 'no'; instead it outputs the probability of being in that particular class. To continue with our cat/dog example, it may output 0.50 for the dog class and 0.50 for the cat class meaning that the image has a 50% probability of being a dog or a cat (this is known as the softmax function, which you can find more information about [here](https://en.wikipedia.org/wiki/Softmax_function)). 
+
+This brings us to  _back propogation_, which is essential to how neural networks 'learn'. Our process began when we input the image and it worked its way through the multiple layers. This is called the forward pass and results in us getting the N-dimensional vector of probabilites as previously mentioned. Let's go back to our dog/cat example and say our input image was in fact a dog. However, since the model wasn't very confident that it was a dog, it's going to go back and do what is called a backward pass through the network and update the weights (i.e. the red numbers in the kernel) to minimize its loss function. Essentially, this process allows the model to become more 'confident' that that image (and those similar to it) are of dogs. If everything goes right, with each additional round of training the model will become more confident that our original input image is a dog. This will be reflected in a higher probability for that class. 
+
+### 
 
 
 
