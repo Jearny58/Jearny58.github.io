@@ -61,4 +61,17 @@ So a model architecture that's less complex and offers better performance? Sign 
 
 (PS - It was also the same architecture the team at Stanford found to have the best performance during their CheXpert research...)
 
+### Closing Remarks
+
+There are two features - dropout and batch normalization - that I want to touch upon really quickly before we look into the performance metrics, model training process, and the results. Both are relatively new techniques that help prevent a deep learning model from overfitting the data. Dropout accomplishes this by randomly removing a percentage of the activations to prevent the model from relying to heavily on any one feature from an image. 
+
+Batch normalization is 'normalizes' the data to prevent any input from having an overwhelming impact and the resulting weights cascading down through the network. As a result, any one feature cannot have a significant influence. In addition it helps keep the model stable during training while also increasing its speed. [(Source)](http://wiki.fast.ai/index.php/Lesson_3_Notes#Batch_Normalization). Below are the commands withing `cnn_learner()` for dropout and batch normalization
+
+- `ps=0.5`: 0.5 is the probability that any one activation is dropped
+- `bn_final=True`
+
+## Back on Track: The Metrics
+
+Ok, after our long CNN 
+
 
