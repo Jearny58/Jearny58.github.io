@@ -47,12 +47,11 @@ So we have a general understanding of what a CNN is, so you may be wondering...
 
 ### What does DenseNet have to do with any of this?
 
-Well, DenseNet takes our convolutional neural network and adds what is called a _dense block_. Each block represents a group of layers however this is where things go escalate: each _dense block_ is connected to all previous layers. Essentially, this slight tweak allows all the layers to communicate their findings with each other, which is especially useful for deep networks with many layers. 
+Well, DenseNet takes our convolutional neural network and adds what is called a _dense block_. These blocks are interconnected with each other, which gives higher layers the ability to reuse features from lower layers. In essence, the network is better able to communicate what is important and then leverage it at any particular layer since each dense block is connected with each other. 
 
+While this interconnectedness between layers may at first seem to increase complexity, it was found to actually _reduce_ the number of parameters __and__ increase performance (compared to ResNet). [(Source)](https://www.jeremyjordan.me/convnet-architectures/#densenet)
 
+So a model architecture that's less complex and offers better performance? Sign me up!
 
+(PS - It was also the same architecture the team at Stanford found to have the best performance during their CheXpert research...)
 
-
-
-
-convolved feature will then be passed into a pooling layer, which is similar to the convolutional layer. However, it is describes each section of the image that using a single value (which is usually the max or average of that window). 
