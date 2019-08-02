@@ -61,7 +61,7 @@ So a model architecture that's less complex and offers better performance? Sign 
 
 (PS - It was also the same architecture the team at Stanford found to have the best performance during their CheXpert research...)
 
-### Closing Remarks
+### Last Remarks on CNN/DenseNet
 
 There are two features - dropout and batch normalization - that I want to touch upon really quickly before we look into the performance metrics, model training process, and the results. Both are relatively new techniques that help prevent a deep learning model from overfitting the data. Dropout accomplishes this by randomly removing a percentage of the activations to prevent the model from relying to heavily on any one feature from an image. 
 
