@@ -21,6 +21,9 @@ Glad you asked! The first part of the CNN is called the _Convolutional Layer_, w
 
 The green box is the image with each of its pixels, the yellow box is our kernel, and the pink box is our convolved feature (which I'll get to in a second). Now, the kernel can be viewed kind of like a flashlight, where it steadily works its way across the entire width and height of the image until it has shined its light on every part of it. Guess you could call it a deep learning version of 'the shining'. 
 
+![the_shining.jpg]({{site.baseurl}}/img/the_shining.jpg)
+
+[(Source)](https://www.amazon.com/Shining-POSTER-Movie-11-Inches/dp/B00KK6JLZY)
 
 
 
