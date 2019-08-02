@@ -43,7 +43,15 @@ Now take note: there are multiple convolutions, ReLUs and pooling layers above. 
 
 This brings us to  _back propogation_, which is essential to how neural networks 'learn'. Our process began when we input the image and it worked its way through the multiple layers. This is called the forward pass and results in us getting the N-dimensional vector of probabilites as previously mentioned. Let's go back to our dog/cat example and say our input image was in fact a dog. However, since the model wasn't very confident that it was a dog, it's going to go back and do what is called a backward pass through the network and update the weights (i.e. the red numbers in the kernel) to minimize its loss function. Essentially, this process allows the model to become more 'confident' that that image (and those similar to it) are of dogs. If everything goes right, with each additional round of training the model will become more confident that our original input image is a dog. This will be reflected in a higher probability for that class. 
 
-### 
+So we have a general understanding of what a CNN is, so you may be wondering...
+
+### What does DenseNet have to do with any of this?
+
+Well, DenseNet takes our convolutional neural network and adds what is called a _dense block_. Each block represents a group of layers however this is where things go escalate: each _dense block_ is connected to all previous layers. Essentially, this slight tweak allows all the layers to communicate their findings with each other, which is especially useful for deep networks with many layers. 
+
+
+
+
 
 
 
