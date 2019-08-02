@@ -49,9 +49,16 @@ So we have a general understanding of what a CNN is, so you may be wondering...
 
 Well, DenseNet takes our convolutional neural network and adds what is called a _dense block_. These blocks are interconnected with each other, which gives higher layers the ability to reuse features from lower layers. In essence, the network is better able to communicate what is important and then leverage it at any particular layer since each dense block is connected with each other. 
 
+![densenet.png](/img/densenet.png)
+
+[(Source)](https://arxiv.org/pdf/1608.06993.pdf)
+
+Image - Each color is a block of layers; notice the red and green lines that show how each block is interconnected. 
+
 While this interconnectedness between layers may at first seem to increase complexity, it was found to actually _reduce_ the number of parameters __and__ increase performance (compared to ResNet). [(Source)](https://www.jeremyjordan.me/convnet-architectures/#densenet)
 
 So a model architecture that's less complex and offers better performance? Sign me up!
 
 (PS - It was also the same architecture the team at Stanford found to have the best performance during their CheXpert research...)
+
 
