@@ -1,7 +1,10 @@
 ---
 layout: post
-published: false
+published: true
 title: 'Capstone Chronicles: Aug. 1, 2019'
+subtitle: Continued Analysis For Second Capstone Project
+date: '2019-08-01'
+image: /img/matrix_pixel_values.png
 ---
 ## Today's Focus
 
