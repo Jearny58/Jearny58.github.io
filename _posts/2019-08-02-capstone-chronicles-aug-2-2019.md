@@ -33,7 +33,11 @@ This is where the pink box comes into play. These matrix multiplications are the
 
 The main goal of this convolutional layer is to filter, as it checks for patterns in each section of the image. This brings us to the pooling layer, which is done in a similar way to the convolution in that another kernel is involved except we're attempting to further reduce the spatial size of our convolved feature. There are two primary approachs for pooling - max and average - which either returns the max value or the average of all the values from a particular section covered by the pooling kernel. The last main layer is the activation layer, which takes these linear outputs and squashes them into a range using a nonlinear function like ReLu (rectified linear unit). A ReLu sounds a lot scarier than it really is. Mathematically, it can be defined as _y = max(0,x)_, meaning that if the number is negative it is 0, otherwise it takes whatever value x is. 
 
+The whole process is detailed in the image below.
 
+![cnn_high_level.png](/img/cnn_high_level.png)
+
+[(Source)](https://media.springernature.com/original/springer-static/image/art%3A10.1007%2Fs13244-018-0639-9/MediaObjects/13244_2018_639_Fig1_HTML.png)
 
 Now the convolutional and pooling layer together form a layer of a neural network. Most of the time, there are many of these layers in any convolutional neural network, with 100+ layers not being uncommon for more complicated data (like medical images). 
 
