@@ -53,7 +53,7 @@ Well, DenseNet takes our convolutional neural network and adds what is called a 
 
 [(Source)](https://arxiv.org/pdf/1608.06993.pdf)
 
-Image - Each color is a block of layers; notice the red and green lines that show how each block is interconnected. 
+_Image - Each color is a block of layers; notice the red and green lines that show how each block is interconnected._
 
 While this interconnectedness between layers may at first seem to increase complexity, it was found to actually _reduce_ the number of parameters __and__ increase performance (compared to ResNet). [(Source)](https://www.jeremyjordan.me/convnet-architectures/#densenet)
 
