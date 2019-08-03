@@ -2,10 +2,11 @@
 layout: post
 published: true
 title: 'Capstone Chronicles: Aug. 2, 2019'
-subtitle: Writings for Comprehensive Analysis of Second Capstone Project
+subtitle: Continued Analysis of Second Capstone Project
 date: '2019-08-02'
 image: /img/math_dl.gif
 ---
+### Another day, so more writing!
 This is the third and potentially final post of the comprehensive analysis for my second capstone project. Yesterday, I had just started to talk about convolutional neural networks, and what they were so that's where we'll pick back up! 
 
 I hope you enjoy it!
@@ -17,13 +18,11 @@ As you can see, a black pixel is assigned a value of 0, and a white pixel is ass
 Glad you asked! The first part of the CNN is called the _Convolutional Layer_. This layer uses a kernel to iterate over a pixel space like the one with the number 8 above. In an attempt to be as user-friendly as possible, a visualization my help to better understand this process.
 
 ![cnn_kernel.gif](/img/cnn_kernel.gif)
-
 [(Source)](https://hackernoon.com/visualizing-parts-of-convolutional-neural-networks-using-keras-and-cats-5cc01b214e59)
 
 The green box is the image with each of its pixels, the yellow box is our kernel, and the pink box is our convolved feature (which I'll get to in a second). Now, the kernel can be viewed kind of like a flashlight, where it steadily works its way across the entire width and height of the image until it has shined its light on every part of it. Guess you could call it a deep learning version of 'the shining.' 
 
 ![the_shining.jpg](/img/the_shining.jpg)
-
 [(Source)](https://www.amazon.com/Shining-POSTER-Movie-11-Inches/dp/B00KK6JLZY)
 
 What this kernel (or 'shining') is doing each step of the way is performing matrix multiplication between its weights/parameters (i.e., the red numbers in the bottom right corner) and the pixel values in the image.
@@ -37,7 +36,6 @@ The convolutional layer's main goal is to filter, as it checks for patterns in e
 Below is a visual representation of what is going on with convolutions, pooling, and activation layers. 
 
 ![cnn_high_level.png](/img/cnn_high_level.png)
-
 [(Source)](https://media.springernature.com/original/springer-static/image/art%3A10.1007%2Fs13244-018-0639-9/MediaObjects/13244_2018_639_Fig1_HTML.png)
 
 Now take note: there are multiple convolutions, ReLUs, and pooling layers above. Most convolutional neural networks have multiple layers, with 100+ layers not being uncommon for more complicated input images (like medical images). Additionally, you may be wondering what is going on at the end of the picture with the 'FC' columns and backpropagation. The FC's are the fully connected layers, which take input from the previous layer and outputs a vector with N dimensions, with N representing the number of classes the model has to choose from. For example, if you were trying to determine whether an image was of a cat or a dog, N would be equal to 2 (i.e., cat represents one potential class, and dog represents another potential class). What is output to this N-dimensional vector is not a 'yes' or a 'no'; instead, it outputs the probability of being in that particular class. To continue with our cat/dog example, it may output 0.50 for the dog class and 0.50 for the cat class meaning that the image has a 50% probability of being a dog or a cat (this is known as the softmax function, which you can find more information about [here](https://en.wikipedia.org/wiki/Softmax_function)). 
@@ -51,7 +49,6 @@ So we have a general understanding of what a CNN is, so now you may be wondering
 Well, DenseNet takes our convolutional neural network and adds what is called a _dense block_. These blocks are interconnected with each other, which gives higher layers the ability to reuse features from lower layers. In essence, the network is better able to communicate what is essential and then leverage it at any particular layer since each dense block is connected. 
 
 ![densenet.png](/img/densenet.png)
-
 [(Source)](https://arxiv.org/pdf/1608.06993.pdf)
 
 _Image - Each color is a block of layers; notice the red and green lines that show how each block is interconnected._
@@ -73,4 +70,4 @@ Below are the commands withing `cnn_learner()` for dropout and batch normalizati
 - `ps=0.5`: dropout, 0.5 is the probability that an activation is dropped
 - `bn_final=True`: batch normalization
 
-### That's it for today, looks like there'll be more writing this weekend! 
+### That's it for today, looks like there'll be more writing this weekend!
