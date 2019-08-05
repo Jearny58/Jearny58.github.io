@@ -82,3 +82,13 @@ The image above is the output from our fifth and final round of training. When c
 However, there is still a lot of room for improvement. Firstly, the `recall` score is pretty low,  indicating a model that is perhaps a little too picky. The `precision` score is relatively high (although it too could be higher) meaning for the most part, the images it thinks contain cardiomegaly, do really have cardiomegaly. Yet, it misses a lot of other actual cases of cardiomegaly because it's so picky. 
 
 ![confusion_matrix](/img/confuse_matrix_2.png)
+
+As a visual representation of this relationship lets take a look at a confusion matrix from the fourth round of training. The reason for taking confusion matrix from the fourth round as opposed to the fifth is because the model actually achieved a `recall` score in the mid-0.50's, slightly higher than that in the fifth. If you take a look at the bottom left corner, we find 30 false negative cases. This is nearly 13% of the validation data set and is cause for serious concern as these 30 observations represent cases where cardiomegaly was present but the model predicted that there was no cardiomegaly. In the context of the situation, a false negative is very bad; it means that a patient who is sick doesn't get the treatment they need. So for future iterations of this model, we would definitely need to figure out how to reduce the number of false negatives to ensure more cases of cardiomegaly are captured. 
+
+__Closing Thoughts__
+
+Overall, this has been a very tough but rewarding project. While the model we produced here is not ready to be used in any type of medical context, it highlights the enormous potential for aritificial intelligence/deep learning within the healthcare space especially with continued research. 
+
+This is just the first step in my deep learning journey and I'll be looking to continue to grow my body of knowledge related to the subject. In particular, I hope to continue to combine the technical with the medical and hopefully contribute to healthcare in such a way that helps people live healthier and happier lives. 
+
+Thank you for taking the time to read this analysis and hope you got some valuable insights along the way. However, with that being said, it's time to get back to work! 
