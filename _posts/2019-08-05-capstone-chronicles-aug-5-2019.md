@@ -32,5 +32,6 @@ Now what are [recall and precision](https://scikit-learn.org/stable/auto_example
 Recall represents the number of true positives divided by the sum of true positives and false negatives. Essentially what recall can tell us is how good the model is at finding the data points of interest (i.e. observations that have cardiomegaly). Precision, on the other hand, represents the value of true positives divided by the sum of true positives and false positives which tells us the proportion of observations that our model said was relevant that actually were. 
 
 __Recall & Precision In Context__
-_RECALL_ = Cases of cardiomegaly correctly identified divided by (cardiomegaly cases correctly identified __+__ cardiomegaly cases incorrectly labeled as no cardiomegaly)
+
+- _RECALL_ = Cases of cardiomegaly correctly identified divided by (cardiomegaly cases correctly identified __+__ cardiomegaly cases incorrectly labeled as no cardiomegaly)
 
