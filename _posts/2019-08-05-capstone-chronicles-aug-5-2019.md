@@ -19,3 +19,7 @@ For a model that classifier that labels images as either a cat or a dog, accurac
 
 Due to this fact, we are going to use AUROC (otherwise known as __Area Under the Receiver Operating Characteristics__) as the primary metric. This metric is an extension of the ROC curve, which is plotted using the true positive rate on the y-axis and false positive rate on the x-axis (see below). 
 
+
+[Source](https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5)
+
+
