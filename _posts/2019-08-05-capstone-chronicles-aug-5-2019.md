@@ -40,7 +40,7 @@ Ideally, we want a high recall and precision as this indicates that the model ha
 
 ## The Strategy: Training the Model
 
-In the [`trial30`](https://github.com/Jearny58/Springboard-DS-Portfolio/blob/master/capstone_2/trial30.ipynb) Jupyter notebook, you can see there are five 'rounds' where we trained the model. Let's begin by taking a look at what is going on in the first round. 
+In the [`trial30`](https://github.com/Jearny58/Springboard-DS-Portfolio/blob/master/capstone_2/trial30.ipynb) Jupyter notebook, you can see there are five 'rounds' where we trained the model. Let's begin by taking a look at what is generally going on each round by taking a look at the first round cell and output. 
 
 ![rd_1.png](/img/rd_1.png)
 
