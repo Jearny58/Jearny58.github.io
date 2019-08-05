@@ -46,7 +46,9 @@ In the [`trial30`](https://github.com/Jearny58/Springboard-DS-Portfolio/blob/mas
 
 We utilized fast.ai's [`fit_one_cycle()`](https://docs.fast.ai/train.html#fit_one_cycle) method on our `learn` object, which contains our deep learning model. This particular method utilizes what is called the 1cycle policy, which has been found to be able to train complex models in significantly less time. It involves hyper-parameters such as learning rate, momentum and weight decay, which are all subjects I do not feel quite qualified to discuss in detail. However, Sylvain Gugger, who is also a part of the fast.ai team, wrote a great [blog post](https://sgugger.github.io/the-1cycle-policy.html) on the 1cycle policy that you should check out if you're interested in learning more. 
 
-Within `fit_one_cycle()`, the `5` represents the number of epochs, `9e-3` is the learning rate, and the `SaveModelCallback` is a callback that allows is to save our best performing model (as judged by `auroc`). 
+The top cell includes the Python code we use to initiate training while the bottom cell corresponds to the output, where the `auroc`, `recall` and `precision` scores can be easily assessed. Also, `error_rate` is included to give an additional high-level perspective on how good our model is doing.
+
+Within the coding cell we can see that `fit_one_cycle()` includes the following: `5`, representing the number of epochs; `9e-3` which is the learning rate; and the `SaveModelCallback`, which allows is to save our best performing model (as judged by `auroc`). 
 
 Before we go any further though, let's answer the following questions: what is an epoch and what is the learning rate? 
 
@@ -62,13 +64,15 @@ To keep it as simple as possible, learning rate affects how much the weights of 
 
 Take a look at the picture above. Essentially the goal of gradient descent, given some higher dimensional space, is to find the minimum point (i.e. the bottom of the curve). Once this minima (i.e. the 'winner') is reached, the corresponding model and its weights are optimal and will return the minimum loss possible for that given data set. Now the learning rate dictates how much we update those weights by after each epoch and are indicated by the arrows in the image above. Notice how the dots are progressively getting closer to the 'winner' point. Now a lower learning rate would take much longer to reach this 'winner' point, if it even reached it at all. On the flip side, if the learning rate was set too high, it runs the possibility of overshooting the minimum or even diverging out of the curve entirely. 
 
-With a basic understanding of what is going on in each round of training, we can now take a look at the key characteristics of each round. 
+With a basic understanding of what is going on within each round of training, we can now take a look at the key characteristics from each round. 
 
 - _Rd. 1_: Original data set, 5 epochs, utilized [`SaveModelCallback`](https://docs.fast.ai/callbacks.html#SaveModelCallback) to save best performing model based on AUROC
 - _Rd. 2_: Loaded best performing weights from rd. 1 (`trial30-rd1`), unfroze entire model allowing every layer group to be trainable [(`unfreeze()`)](https://docs.fast.ai/basic_train.html#Learner.unfreeze), set learning rate to ~`6.31e-07` then passed [`slice()`](https://docs.fast.ai/basic_train.html#Learner.lr_range) to allow for differential learning rate, trained for 5 epochs
 - _Rd. 3_: Set new seed, generated a new randomly sampled data set of images (~40,000), loaded best performing weights from rd. 2 (`best-dn121-trial30-rd2`), unfroze entire model to allow every layer to be trainable, set learning rate to ~`5.01e-07`) then passed to [`slice()`](https://docs.fast.ai/basic_train.html#Learner.lr_range) to allow for differential learning rates, trained for 5 epochs
 - _Rd. 4_: Set new seed, generated a new randomly sampled data set of images (~40,000), loaded best performing weights from rd. 3 (`best-dn121-trial30-rd3`), froze model up to last layer group [`freeze()`](https://docs.fast.ai/basic_train.html#Learner.freeze), set learning rate equal to `3e-06` then passed to [`slice()`](https://docs.fast.ai/basic_train.html#Learner.lr_range) to allow for differential learning rates, trained for 3 epochs
 - _Rd. 5_: Loaded best performing weights from rd. 4(`best-dn121-trial30-rd4`), unfroze model, set learning rate to ~`2.51e-07` then passed `slice(lr, 3e-4)` to allow for differential learning rates, trained for 3 epochs
+
+## The Results
 
 
 We can also see the `auroc`, `recall` and `precision` scores in addition to the `error_rate` which gives an additional high-level perspective on how 'wrong' our model is.
