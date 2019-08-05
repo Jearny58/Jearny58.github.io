@@ -23,7 +23,7 @@ Due to this fact, we are going to use AUROC as the primary metric. This metric i
 
 [Source](https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5)
 
-Now AUROC takes the ROC curve a step further and assesses the area underneath that curve, which it is otherwise known as __A__rea __U__nder the __R__eceiver __O__perating __C__haracteristics. 
+Now AUROC takes the ROC curve a step further and assesses the area underneath that curve, which it is otherwise known as **A**rea **U**nder the **R**eceiver **O**perating **C**haracteristics. 
 
 A perfect classifier would have an area of 1 (i.e. the graph would go straight up and over, resembling a flipped L). What does the dashed line that cuts through the middle of the graph represent though? Simply put, this line represents an AUROC of 0.5, which would theoretically represent a classifier that's no better than random at detecting cardiomegaly. 
 
