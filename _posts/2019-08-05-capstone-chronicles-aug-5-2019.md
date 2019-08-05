@@ -72,8 +72,13 @@ With a basic understanding of what is going on within each round of training, we
 - _Rd. 4_: Set new seed, generated a new randomly sampled data set of images (~40,000), loaded best performing weights from rd. 3 (`best-dn121-trial30-rd3`), froze model up to last layer group [`freeze()`](https://docs.fast.ai/basic_train.html#Learner.freeze), set learning rate equal to `3e-06` then passed to [`slice()`](https://docs.fast.ai/basic_train.html#Learner.lr_range) to allow for differential learning rates, trained for 3 epochs
 - _Rd. 5_: Loaded best performing weights from rd. 4(`best-dn121-trial30-rd4`), unfroze model, set learning rate to ~`2.51e-07` then passed `slice(lr, 3e-4)` to allow for differential learning rates, trained for 3 epochs
 
-## The Results
+## The Results & Future Improvements
 
 ![last_round](/img/last_round.png)
-
 (_Output from last round of training_)
+
+The image above is the output from our fifth and final round of training. When can see that the `auroc` steadily increases from ~0.81 to ~0.83, indicating a gradual increase in overall performance. As a reminder that when utilizing the `U-Zeros` approach, the team at Stanford achieved an AUROC of 0.84 meaning that, as is, this model is nearly at the same level! 
+
+However, there is still a lot of room for improvement. Firstly, the `recall` score is pretty low,  indicating a model that is perhaps a little too picky. The `precision` score is relatively high (although it too could be higher) meaning for the most part, the images it thinks contain cardiomegaly, do really have cardiomegaly. Yet, it misses a lot of other actual cases of cardiomegaly because it's so picky. 
+
+![confusion_matrix](/img/confusion_matrix.png)
