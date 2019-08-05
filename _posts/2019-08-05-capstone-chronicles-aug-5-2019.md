@@ -81,4 +81,4 @@ The image above is the output from our fifth and final round of training. When c
 
 However, there is still a lot of room for improvement. Firstly, the `recall` score is pretty low,  indicating a model that is perhaps a little too picky. The `precision` score is relatively high (although it too could be higher) meaning for the most part, the images it thinks contain cardiomegaly, do really have cardiomegaly. Yet, it misses a lot of other actual cases of cardiomegaly because it's so picky. 
 
-![confusion_matrix](/img/confusion_matrix.png)
+![confusion_matrix](/img/confusion_matrix_small.png)
