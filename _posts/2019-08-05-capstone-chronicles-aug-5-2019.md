@@ -36,3 +36,7 @@ __Recall & Precision In Context__
 - _RECALL_ = Cases of cardiomegaly correctly identified divided by (cardiomegaly cases correctly identified __+__ cardiomegaly cases incorrectly labeled as no cardiomegaly)
 - _PRECISION_ = Cases of cardiomegaly correctly identified divided by (cardiomegaly cases correctly identified __+__ no cardiomegaly cases incorrectly labeled as having cardiomegaly)
 
+Ideally, we want a high recall and precision as this indicates that the model has the ability to identify not just only relevant instances but all of them as well. 
+
+
+
