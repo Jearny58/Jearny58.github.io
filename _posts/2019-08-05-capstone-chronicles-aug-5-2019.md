@@ -2,6 +2,9 @@
 layout: post
 published: false
 title: 'Capstone Chronicles: Aug. 5, 2019'
+subtitle: Last Part of Analysis for Second Capstone Project
+date: '2019-08-05'
+image: /img/auroc_curve.png
 ---
 ### Another Day, Another Capstone Chronicle!
 
