@@ -76,4 +76,4 @@ With a basic understanding of what is going on within each round of training, we
 
 ![last_round](/img/last_round.png)
 
-
+(_Output from last round of training_)
