@@ -74,5 +74,6 @@ With a basic understanding of what is going on within each round of training, we
 
 ## The Results
 
+![last_round](/img/last_round.png)
 
-We can also see the `auroc`, `recall` and `precision` scores in addition to the `error_rate` which gives an additional high-level perspective on how 'wrong' our model is.
+
