@@ -38,10 +38,12 @@ I guess I should've put an asterisk next to the percentage I mentioned earlier. 
 
 To be completely honest, I'm a little bit nervous about these. Yet, they present awesome opportunities to get first-hand experience with the recruiting/interviewing process as well as the chance to maybe learn a thing or two from the Springboard mentors! Just have to refresh my 'vanilla' Python skills (no pandas, numpy, etc. are allowed!). 
 
-__3. [A Cloud Guru](https://acloud.guru/)
+__3. 30 minutes of [A Cloud Guru](https://acloud.guru/) per day__
 
 Cloud computing isn't going anywhere and from what I've been picking up via Medium and assorted DS-related blog posts is that being comfortable in the cloud is going to be more and more important for data scientists. 
 
 I came across A Cloud Guru awhile back and I love how their 'walkthrough'-like tutorials that give you the ability to work with things like AWS firsthand! Even better is that they offer a course for the [AWS Certified Machine Learning](https://aws.amazon.com/certification/certified-machine-learning-specialty/) certification, which I think will be extremely beneficial going forward. 
+
+
 
 
