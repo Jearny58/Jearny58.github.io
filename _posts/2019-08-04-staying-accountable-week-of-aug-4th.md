@@ -21,7 +21,10 @@ As you can see [here](https://jearny58.github.io/2019-07-31-capstone-chronicles-
 - The performance metrics - AUROC, recall and precision - and what they tell us about the model's performance.
 	- AUROC is the primary metric for assessing the model, but recall and precision gave us a little better idea of what was going on.
 - Discuss the strategy I used for each round of training. Below are some characteristics of each round (that I'll expand upon in the comprehensive analysis). 
-	- Rd. 1: Original data set, 5 epochs, utlized [`SaveModelCallback`](https://docs.fast.ai/callbacks.html#SaveModelCallback) to save best performing model based on AUROC
-    - Rd. 2: Loaded best performing weights from rd. 1 (`trial30-rd1`), unfroze entire model allowing every layer group to be trainable ([`unfreeze()`](https://docs.fast.ai/basic_train.html#Learner.unfreeze), set learning rate to ~`6.31e-07` then passed [`slice()`] to allow for differential learning rate, trained for 5 epochs
-    - Rd. 3
+	- _Rd. 1_: Original data set, 5 epochs, utlized [`SaveModelCallback`](https://docs.fast.ai/callbacks.html#SaveModelCallback) to save best performing model based on AUROC
+    - _Rd. 2_: Loaded best performing weights from rd. 1 (`trial30-rd1`), unfroze entire model allowing every layer group to be trainable ([`unfreeze()`](https://docs.fast.ai/basic_train.html#Learner.unfreeze), set learning rate to ~`6.31e-07` then passed [`slice()`](https://docs.fast.ai/basic_train.html#Learner.lr_range) to allow for differential learning rate, trained for 5 epochs
+    - _Rd. 3_: Set new seed, generated a new randomly sampled data set of images (~40,000), loaded best performing weights from rd. 2 (`best-dn121-trial30-rd2`), unfroze entire model to allow every layer to be trainable, set learning rate to ~`5.01e-07) then passed to [`slice()`](https://docs.fast.ai/basic_train.html#Learner.lr_range) to allow for differential learning rates, trained for 5 epochs
+    - _Rd. 4_: Set new seed, generated a new randomly sampled data set of images (~40,000), loaded best performing weights from rd. 3 (`best-dn121-trial30-rd3`), froze model up to last layer group [`freeze()`](https://docs.fast.ai/basic_train.html#Learner.freeze), set learning rate equal to `3e-06` then passed to [`slice()`](https://docs.fast.ai/basic_train.html#Learner.lr_range) to allow for differential learning rates, trained for 3 epochs
+    - _Rd. 5_: Loaded best performing weights from rd. 4(`best-dn121-trial30-rd4`), unfroze model, set learning rate to ~`2.51e-07` then passed `slice(lr, 3e-4)` to allow for differential learning rates, trained for 3 epochs
+
 
