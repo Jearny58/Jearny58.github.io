@@ -60,7 +60,11 @@ To keep it as simple as possible, learning rate affects how much the weights of 
 
 [Source](http://wiki.fast.ai/index.php/Gradient_Descent)
 
-Take a look at the picture above. Essentially the goal of gradient descent, given some higher dimensional space, is to find the minimum point (i.e. the bottom of the curve). Once this minima (i.e. the 'winner') is reached, the corresponding model and its weights are optimal and will return the minimum loss possible for that given data set. Now the learning rate dictates how much we update those weights by after each epoch and are indicated by the arrows in the image above. Notice how the dots are 
+Take a look at the picture above. Essentially the goal of gradient descent, given some higher dimensional space, is to find the minimum point (i.e. the bottom of the curve). Once this minima (i.e. the 'winner') is reached, the corresponding model and its weights are optimal and will return the minimum loss possible for that given data set. Now the learning rate dictates how much we update those weights by after each epoch and are indicated by the arrows in the image above. Notice how the dots are progressively getting closer to the 'winner' point. Now a lower learning rate would take much longer to reach this 'winner' point, if it even reached it at all. On the flip side, if the learning rate was set too high, it runs the possibility of overshooting the minimum or even diverging out of the curve entirely. 
+
+With a basic understanding of what is going on in each round of training, we can now take a look at the key characteristics of each round. 
+
+
 
 
 We can also see the `auroc`, `recall` and `precision` scores in addition to the `error_rate` which gives an additional high-level perspective on how 'wrong' our model is. 
