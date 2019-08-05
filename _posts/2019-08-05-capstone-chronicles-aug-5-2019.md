@@ -54,7 +54,10 @@ An epoch represents the case when an entire dataset is passed forward and backwa
 
 Now, onto learning rate; what is it? 
 
+To keep it as simple as possible, learning rate affects how much the weights of the network are adjusted with respect to the loss, which is also known as [gradient descent](http://wiki.fast.ai/index.php/Gradient_Descent). 
 
+
+Gradient desceEffectively, a learning rate that is too high will fail to coner
 
 
 We can also see the `auroc`, `recall` and `precision` scores in addition to the `error_rate` which gives an additional high-level perspective on how 'wrong' our model is. 
