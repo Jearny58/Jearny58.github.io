@@ -17,9 +17,20 @@ When it comes to classification problems, there are quite a few metrics one coul
 
 For a model that classifier that labels images as either a cat or a dog, accuracy may be a suitable metric. However, from the CheXpert data we are trying to build something that has the potential to assist medical professionals detects diseases and quite literally save lives. To say the stakes are a little higher may be an understatement. 
 
-Due to this fact, we are going to use AUROC (otherwise known as __Area Under the Receiver Operating Characteristics__) as the primary metric. This metric is an extension of the ROC curve, which is plotted using the true positive rate on the y-axis and false positive rate on the x-axis (see below). 
+Due to this fact, we are going to use AUROC as the primary metric. This metric is an extension of the ROC curve (i.e. the green line below), which is plotted using the true positive rate on the y-axis and false positive rate on the x-axis (see below). In our case, a true positive is represented by positive prediction on an observation that did indeed have cardiomegaly; a false positive would be a positive prediction on an observation that did __not__ have cardiomegaly. 
 
 ![auroc_curve.png](/img/auroc_curve.png)
+
 [Source](https://towardsdatascience.com/understanding-auc-roc-curve-68b2303cc9c5)
 
+Now AUROC takes the ROC curve a step further and assesses the area underneath that curve, which it is otherwise known as __A__rea __U__nder the __R__eceiver __O__perating __C__haracteristics. 
+
+A perfect classifier would have an area of 1 (i.e. the graph would go straight up and over, resembling a flipped L). What does the dashed line that cuts through the middle of the graph represent though? Simply put, this line represents an AUROC of 0.5, which would theoretically represent a classifier that's no better than random at detecting cardiomegaly. 
+
+Now what are [recall and precision](https://scikit-learn.org/stable/auto_examples/model_selection/plot_precision_recall.html) and what do they have to do with this analysis? 
+
+Recall represents the number of true positives divided by the sum of true positives and false negatives. Essentially what recall can tell us is how good the model is at finding the data points of interest (i.e. observations that have cardiomegaly). Precision, on the other hand, represents the value of true positives divided by the sum of true positives and false positives which tells us the proportion of observations that our model said was relevant that actually were. 
+
+__Recall & Precision In Context__
+_RECALL_ = Cases of cardiomegaly correctly identified divided by (cardiomegaly cases correctly identified __+__ cardiomegaly cases incorrectly labeled as no cardiomegaly)
 
