@@ -2,6 +2,9 @@
 layout: post
 published: false
 title: 'Staying Accountable: Week of Aug. 4th'
+subtitle: 3 Primary Goals for the Week
+date: '2019-08-04'
+image: /img/jon_snow.gif
 ---
 ### Staying Accountable
 Today while I was driving I came up with the idea that at the start of every week, I should lay out a general game-plan of what I hope to accomplish. A little over three hours later here I am! Being the first post of its kind, I don't really know how to best approach it. Yet, it's always better to get something out there into the world than to let it stay locked up in your mind.
