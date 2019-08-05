@@ -44,5 +44,20 @@ In the [`trial30`](https://github.com/Jearny58/Springboard-DS-Portfolio/blob/mas
 
 ![rd_1.png](/img/rd_1.png)
 
+We utilized fast.ai's [`fit_one_cycle()`](https://docs.fast.ai/train.html#fit_one_cycle) method on our `learn` object, which contains our deep learning model. This particular method utilizes what is called the 1cycle policy, which has been found to be able to train complex models in significantly less time. It involves hyper-parameters such as learning rate, momentum and weight decay, which are all subjects I do not feel quite qualified to discuss in detail. However, Sylvain Gugger, who is also a part of the fast.ai team, wrote a great [blog post](https://sgugger.github.io/the-1cycle-policy.html) on the 1cycle policy that you should check out if you're interested in learning more. 
+
+Within `fit_one_cycle()`, the `5` represents the number of epochs, `9e-3` is the learning rate, and the `SaveModelCallback` is a callback that allows is to save our best performing model (as judged by `auroc`). 
+
+Before we go any further though, let's answer the following questions: what is an epoch and what is the learning rate? 
+
+An epoch represents the case when an entire dataset is passed forward and backward through a neural network one time. Now, why did we train for five epochs? Good question. Unfortunately, to my knowledge there is no right answer when it comes to the best number of epochs to use. Generally things like training time and diversity of the data should be taken into consideration when considering epochs but there is also quite a bit of experimentation required. I found 3-5 epochs to be the best range for this particular project, as it didn't require too much time and the results tended to be good. 
+
+Now, onto learning rate; what is it? 
+
+
+
+
+We can also see the `auroc`, `recall` and `precision` scores in addition to the `error_rate` which gives an additional high-level perspective on how 'wrong' our model is. 
+
 
 
