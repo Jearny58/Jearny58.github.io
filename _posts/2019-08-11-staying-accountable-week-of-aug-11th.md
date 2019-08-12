@@ -1,7 +1,9 @@
 ---
 layout: post
-published: false
+published: true
 title: 'Staying Accountable: Week of Aug. 11th'
+subtitle: 3 Primary Goals for the Week
+date: '2019-08-11'
 ---
 ### How did I do from last week?
 
