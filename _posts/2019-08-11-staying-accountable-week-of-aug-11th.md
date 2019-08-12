@@ -46,5 +46,9 @@ For the technical interview, we **cannot** use libraries like `pandas`, `numpy`,
 
 __3. Work on [APTOS 2019 Blindness Detection](https://www.kaggle.com/c/aptos2019-blindness-detection) Kaggle Competition__
 
-I've already produced some initial models that have produced decent results. This competition provides another opportunity to keep learning about deep learning and to push my skill set even further! Specifically, my goal is to devote at least one hour a day to experimentation. 
+I've already produced some initial models that have produced decent results. This competition provides another opportunity to keep learning about deep learning and to push my skill set even further! Specifically, my goal is to devote at least one hour a day to experimentation.
 
+__And here...we...go!__
+
+
+![](/img/the_joker_here_we_go.gif)
