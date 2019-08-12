@@ -24,3 +24,7 @@ Typically, a corpus is a collections of documents, which can take various froms,
 From this corpus, we get the following _lexicon_, which is essentially NLP fancy talk for vocabulary:
 
 `V = {a, along, and, as, at, beautiful, branches, bunch, burst, day, fox, fox's, from, gazed, grapes, hanging, he, juice, longingly, mouth, of, one, ready, ripe, seemed, spied, the, them, to, trained, tree, vine, watered, with}`
+
+This _lexicon_ includes all the words used in our _corpus_. So this brings us back to our original question: how do you derive a vector from a document? So let's take the first sentence (or rather document) and, using our vocabulary above, create a sparse vector of word counts:
+
+$$\bar V(d) = \left( 4,1,0,0,0,1,1,1,0,1,1,0,1,0,1,1,0,0,0,0,2,1,0,1,0,0,1,0,0,1,1,1,0,0 \right)$$
