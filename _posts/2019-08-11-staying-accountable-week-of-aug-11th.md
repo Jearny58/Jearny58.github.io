@@ -4,6 +4,7 @@ published: true
 title: 'Staying Accountable: Week of Aug. 11th'
 subtitle: 3 Primary Goals for the Week
 date: '2019-08-11'
+image: /img/the_joker_here_we_go.gif
 ---
 ### How did I do from last week?
 
