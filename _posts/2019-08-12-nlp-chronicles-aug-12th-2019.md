@@ -25,6 +25,12 @@ From this corpus, we get the following _lexicon_, which is essentially NLP fancy
 
 `V = {a, along, and, as, at, beautiful, branches, bunch, burst, day, fox, fox's, from, gazed, grapes, hanging, he, juice, longingly, mouth, of, one, ready, ripe, seemed, spied, the, them, to, trained, tree, vine, watered, with}`
 
-This _lexicon_ includes all the words used in our _corpus_. So this brings us back to our original question: how do you derive a vector from a document? So let's take the first sentence (or rather document) and, using our vocabulary above, create a sparse vector of word counts:
+This _lexicon_ includes all the words used in our _corpus_. So this brings us back to our original question: how do you derive a vector from a document? So let's take the first sentence/document (i.e. d1) and, using our vocabulary (i.e. `V`) above, create a sparse vector of word counts:
 
-$$\bar V(d) = \left( 4,1,0,0,0,1,1,1,0,1,1,0,1,0,1,1,0,0,0,0,2,1,0,1,0,0,1,0,0,1,1,1,0,0 \right)$$
+`V(d1) = (4,1,0,0,0,1,1,1,0,1,1,0,1,0,1,1,0,0,0,0,2,1,0,1,0,0,1,0,0,1,1,1,0,0)`
+
+Ok what are these random numbers? 
+
+The represent the number of times a word in each index of the vocabulary appears in our first sentence/document. So the `4` at the beginning means that the letter `a` appears four times in our first document. If you keep going along, you find how many appearances each word in the vocabulary makes. Now that we see the connection, what does the `1` immediately to the right of `4` represent? Well if we look back up at `V` we see that the word `along` takes the second spot, and the subsequent `1` means that `along` appears once in document `d1` (i.e. the first sentence).
+
+
