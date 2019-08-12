@@ -9,4 +9,6 @@ It has come to my attention that I need a little work on my NLP (natural languag
 
 I'm going to start by reviewing an assignment from Unit 10 of Springboard's Data Science course, [Basic Text Classification with Naive Bayes](https://nbviewer.jupyter.org/github/Jearny58/Springboard-DS-Portfolio/blob/master/unit10-machine-learning/naive-bayes-predicting-movie-ratings/naive_bayes/Mini_Project_Naive_Bayes.ipynb). This assignments uses a subset of movie reviews from [Rotten Tomatoes](https://www.rottentomatoes.com/) to classify whether or not a movie is 'fresh' or not.
 
-`$$P(c \vert f) = \frac{P(c \cap f)}{P(f)}$$`
+## The Vector Space Model and a Search Engine
+
+$d$
