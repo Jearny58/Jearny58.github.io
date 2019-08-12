@@ -11,4 +11,4 @@ I'm going to start by reviewing an assignment from Unit 10 of Springboard's Data
 
 ## The Vector Space Model and a Search Engine
 
-$d$
+To get us started, we must understand what a "vector derived from document _d_ by $\bar V(d)$
