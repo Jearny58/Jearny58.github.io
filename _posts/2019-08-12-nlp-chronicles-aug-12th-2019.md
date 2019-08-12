@@ -37,4 +37,12 @@ In other words, a our vector of word counts can be represented as the following 
 
 `[(0, 4), (1, 1), (5, 1), (6, 1), (7, 1), (9, 1), (10, 1), (12, 1), (14, 1), (15, 1), (20, 2), (21, 1), (23, 1), (26, 1), (29,1), (30, 1), (31, 1)]`
 
+with the following dictionary (that is tied to the first number in each tuple and represents that word as an integer):
+
+``
+{
+    0: a, 1: along, 5: beautiful, 6: branches, 7: bunch, 9: day, 10: fox, 12: from, 14: grapes, 15: hanging, 19: mouth, 20: of, 21: one, 23: ripe, 24: seemed, 25: spied, 26: the, 29:trained, 30: tree, 31: vine, 
+}
+``
+
 
