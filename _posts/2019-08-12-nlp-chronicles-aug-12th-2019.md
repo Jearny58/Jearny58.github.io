@@ -33,4 +33,8 @@ Ok what are these random numbers?
 
 The represent the number of times a word in each index of the vocabulary appears in our first sentence/document. So the `4` at the beginning means that the letter `a` appears four times in our first document. If you keep going along, you find how many appearances each word in the vocabulary makes. Now that we see the connection, what does the `1` immediately to the right of `4` represent? Well if we look back up at `V` we see that the word `along` takes the second spot, and the subsequent `1` means that `along` appears once in document `d1` (i.e. the first sentence).
 
+In other words, a our vector of word counts can be represented as the following list of tuples:
+
+`[(0, 4), (1, 1), (5, 1), (6, 1), (7, 1), (9, 1), (10, 1), (12, 1), (14, 1), (15, 1), (20, 2), (21, 1), (23, 1), (26, 1), (29,1), (30, 1), (31, 1)]`
+
 
