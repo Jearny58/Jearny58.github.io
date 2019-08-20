@@ -183,3 +183,27 @@ __Query Clause Order__
 4. `GROUP BY`
 5. `HAVING`
 6. `ORDER BY`
+
+### SQL `DISTINCT`
+
+By using `SELECT DISTINCT`, you'll be able to look at the unique values within a particular column. 
+
+__Example: Select unique months__
+
+	SELECT DISTINCT month
+    FROM tutorial.aapl_historical_stock_price
+    
+You can use two or more columns as well with `DISTINCT`; this will contain all unqiue pairs of those particular columns.
+
+__Example: Unique pairs from multiple columns__
+
+	SELECT DISTINCT year, month
+    FROM tutorial.aapl_historical_stock_price
+    
+**Note**: You only need to include `DISTINCT` once in `SELECT` clause.
+
+__Practice: Select unique values in `year` column, in chronological order__
+
+	SELECT DISTINCT year
+    FROM tutorial.aapl_historical_stock_price
+    ORDER BY year
