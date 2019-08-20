@@ -40,29 +40,29 @@ SQL is an excellent tool to aggregate data, and the following functions will be 
 
 __Counting All Rows__
 
-		SELECT COUNT(*)
-		FROM tutorial.aapl_historical_stock_price
+	SELECT COUNT(*)
+	FROM tutorial.aapl_historical_stock_price
         
 __Counting Individual Columns__
 
-		SELECT COUNT(high)
-        FROM tutorial.aapl_historical_stock_price
+	SELECT COUNT(high)
+    FROM tutorial.aapl_historical_stock_price
         
 __Practice Problem: Count number of non-null rows in `low` column__
 
-		SELECT COUNT(low) 
-		FROM tutorial.aapl_historical_stock_price
+	SELECT COUNT(low) 
+	FROM tutorial.aapl_historical_stock_price
 
 __Practice Problem: Write a query that determines counts of every single column__
 
-		SELECT COUNT(year) AS year,
-        	   COUNT(month) AS month,
-        	   COUNT(open) AS open,
-        	   COUNT(high) AS high,
-        	   COUNT(low) AS low,
-        	   COUNT(close) AS close,
-        	   COUNT(volume) AS volume
-  		FROM tutorial.aapl_historical_stock_price
+	SELECT COUNT(year) AS year,
+           COUNT(month) AS month,
+           COUNT(open) AS open,
+           COUNT(high) AS high,
+           COUNT(low) AS low,
+           COUNT(close) AS close,
+           COUNT(volume) AS volume
+  	FROM tutorial.aapl_historical_stock_price
         
 __Important Reminders for `COUNT`__
 
@@ -73,13 +73,13 @@ __Important Reminders for `COUNT`__
 
 __Sum of the `volume` column from [Apple stock prices dataset](https://mode.com/resources/sql-tutorial/sql-aggregate-functions/#the-apple-stock-prices-dataset)__
 
-		SELECT SUM(volume)
-        FROM tutorial.aapl_historical_stock_price
+	SELECT SUM(volume)
+    FROM tutorial.aapl_historical_stock_price
 
 __Practice: Calculate average opening `AAPL` price__
 
-		SELECT SUM(open) / COUNT(open) AS avg_opening_price
-        FROM tutorial.aapl_historical_stock_price
+	SELECT SUM(open) / COUNT(open) AS avg_opening_price
+    FROM tutorial.aapl_historical_stock_price
         
 __Important Reminders for `SUM`__
 
@@ -90,13 +90,13 @@ __Important Reminders for `SUM`__
 
 __Practice: What was Apple's lowest stock price?__
 
-		SELECT MIN(low) as lowest_stock_price
-        FROM tutorial.aapl_historical_stock_price
+	SELECT MIN(low) as lowest_stock_price
+    FROM tutorial.aapl_historical_stock_price
         
 __Practice: What was the highest single-day increase in Apple's share value?__
 
-		SELECT MAX(close - open)
-        FROM tutorial.aapl_historical_stock_price
+	SELECT MAX(close - open)
+    FROM tutorial.aapl_historical_stock_price
 
 __Important Reminders for `MIN`/`MAX`__
 
@@ -107,8 +107,8 @@ __Important Reminders for `MIN`/`MAX`__
 
 __Practice: Calculate the average daily trade volumne for Apple stock__
 
-		SELECT AVG(volumne) as avg_volume
-        FROM tutorial.aapl_historical_stock_price
+	SELECT AVG(volumne) as avg_volume
+    FROM tutorial.aapl_historical_stock_price
 
 __Important Reminders for `AVG`__
 
