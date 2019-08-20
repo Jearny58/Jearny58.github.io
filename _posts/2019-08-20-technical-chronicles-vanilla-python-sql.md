@@ -52,7 +52,77 @@ __Practice Problem: Count number of non-null rows in `low` column__
 
 		SELECT COUNT(low) 
 		FROM tutorial.aapl_historical_stock_price
+
+__Practice Problem: Write a query that determines counts of every single column__
+
+		SELECT COUNT(year) AS year,
+        	   COUNT(month) AS month,
+        	   COUNT(open) AS open,
+        	   COUNT(high) AS high,
+        	   COUNT(low) AS low,
+        	   COUNT(close) AS close,
+        	   COUNT(volume) AS volume
+  		FROM tutorial.aapl_historical_stock_price
         
+__Important Reminders for `COUNT`__
+
+- it counts the total number of non-null rows, not the distinct values
+- its good practice to name columns so they make more sense to anyone else viewing the work
+
+### Examples of `SUM`
+
+__Sum of the `volume` column from [Apple stock prices dataset](https://mode.com/resources/sql-tutorial/sql-aggregate-functions/#the-apple-stock-prices-dataset)__
+
+		SELECT SUM(volume)
+        FROM tutorial.aapl_historical_stock_price
+
+__Practice: Calculate average opening `AAPL` price__
+
+		SELECT SUM(open) / COUNT(open) AS avg_opening_price
+        FROM tutorial.aapl_historical_stock_price
+        
+__Important Reminders for `SUM`__
+
+- can only use on columns containing numerical values
+- treats nulls as `0`
+
+### Examples of `MIN`/`MAX`
+
+__Practice: What was Apple's lowest stock price?__
+
+		SELECT MIN(low) as lowest_stock_price
+        FROM tutorial.aapl_historical_stock_price
+        
+__Practice: What was the highest single-day increase in Apple's share value?__
+
+		SELECT MAX(close - open)
+        FROM tutorial.aapl_historical_stock_price
+
+__Important Reminders for `MIN`/`MAX`__
+
+- return lowest/highest values in particular column
+- can be used on non-numerical columns
+
+### Examples of `AVG`
+
+__Practice: Calculate the average daily trade volumne for Apple stock__
+
+		SELECT AVG(volumne) as avg_volume
+        FROM tutorial.aapl_historical_stock_price
+
+__Important Reminders for `AVG`__
+
+- calculates average of selected group of values
+- can only be used on numerical columns
+- ignores nulls completely
+	- some cases where you'll want to treat null values as 0
+    - will need to write a statement to convert nulls to 0
+    
+### SQL `GROUP BY`
+
+The above functions have something in common: they aggregate across the entire table. However, what if you want to aggregate only part of it? That is where `GROUP BY` comes into play, as it allows data to be separated into groups then aggregated independently of each other. 
+
+
 
         
 
