@@ -122,8 +122,32 @@ __Important Reminders for `AVG`__
 
 The above functions have something in common: they aggregate across the entire table. However, what if you want to aggregate only part of it? That is where `GROUP BY` comes into play, as it allows data to be separated into groups then aggregated independently of each other. 
 
+__Example: Group Apple data by year__
 
+	SELECT year, COUNT(*) AS count
+    FROM tutorial.aapl_historical_stock_price
+    GROUP BY year
+    
+You can group by multiple columns as well (just be sure to use a comma!). 
 
+__Example: Group by multiple columns__
+
+	SELECT year,
+    	   month,
+           COUNT(*) AS count
+    FROM tutorial.aapl_historical_stock_price
+    GROUP BY year, month
+    
+__Practice: Total number of shares traded each month, ordered chronologically__
+
+	SELECT year, month, SUM(volume) AS shares_traded
+    FROM tutorial.aapl_historical_stock_price
+    GROUP BY year, month
+    ORDER BY year, month
+    
+You can also substitute numbers for column names in the `GROUP BY` clause. However, this should only be used in situations where the `GROUP BY` clause is excessively long. Additionally, this functionality may not be supported by every flavor of SQL. 
+
+__Practice: Calculate average daily price change, grouped by year__
         
 
         
