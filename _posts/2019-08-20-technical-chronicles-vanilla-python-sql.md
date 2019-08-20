@@ -148,7 +148,38 @@ __Practice: Total number of shares traded each month, ordered chronologically__
 You can also substitute numbers for column names in the `GROUP BY` clause. However, this should only be used in situations where the `GROUP BY` clause is excessively long. Additionally, this functionality may not be supported by every flavor of SQL. 
 
 __Practice: Calculate average daily price change, grouped by year__
-        
 
-        
+	SELECT year, AVG(high - low) AS avg_daily_change
+    FROM tutorial.aapl_historical_stock_price
+    GROUP BY year
+    ORDER BY year
     
+__Practice: Calculate the lowest and highest prices that Apple stock achieved each month__
+
+	SELECT year, month, MAX(high) AS high_price, MIN(low) AS low_price
+    FROM tutorial.aapl_historical_stock_price
+    GROUP BY year, month
+    ORDER BY year, month
+        
+### SQL `HAVING`
+
+Sometimes `GROUP BY` isn't enough. Sometimes you want to find more nuanced information, like months where Apple stock eclipsed $400 a share. The `WHERE` clause won't work on aggregate columns, and this is where `HAVING` clause comes in.
+
+__Example: Months when AAPL eclipsed $400__
+
+	SELECT year, month, MAX(high) AS monthly_high
+    FROM tutorial.aapl_historical_stock_price
+    GROUP BY year, month
+    HAVING MAX(high) > 400
+    ORDER BY year, month
+    
+**Note**: `HAVING` is a 'clean' way to filter an aggregated query, but this can also be done with a subquery. 
+
+__Query Clause Order__
+
+1. `SELECT`
+2. `FROM`
+3. `WHERE`
+4. `GROUP BY`
+5. `HAVING`
+6. `ORDER BY`
