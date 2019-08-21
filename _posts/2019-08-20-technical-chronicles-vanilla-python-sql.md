@@ -387,3 +387,8 @@ __Practice: Gather player names, school names and conferences for schools in FBS
     ON teams.school_name = players.school_name
     WHERE teams.division = 'FBS (Division I-A Teams)'
 
+__Visualization to help understand `JOIN`__
+
+![](/img/visual-join.png)
+
+[Source](https://mode.com/resources/sql-tutorial/sql-outer-joins/)
