@@ -243,10 +243,9 @@ Lastly, you can also use the value of `'no'` instead of `NULL` for players that 
 
 __Practice: Query that flags players from California, and sorts the results with those players first__
 
-	SELECT player_name,
-    	   state,
+	SELECT player_name, state,
            CASE WHEN state = 'CA' THEN 'yes'
-           ELSE 'no' END AS from_california
+                ELSE 'no' END AS from_california
 	FROM benn.college_football_players
     ORDER BY from_california DESC
     
@@ -256,7 +255,7 @@ __Example: Categorizing players by weight__
 
 	SELECT player_name, weight,
            CASE WHEN weight > 250 THEN 'over 250'
-           		WHEN weight > 200 AND weight <= 250 THEN '201-250'
+                WHEN weight > 200 AND weight <= 250 THEN '201-250'
                 WHEN weight > 175 AND weight <= 200 THEN '176-200'
            ELSE '175 or under' END AS weight_group
     FROM benn.college_football_players
