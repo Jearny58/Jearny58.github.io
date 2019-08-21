@@ -434,4 +434,27 @@ __Practice: Using a `RIGHT JOIN` return the same results as the practice problem
     
 _Notice_ how we simply switched the tables positions!
 
-__Practice: Return company's name, 'status' and number of unique investors in that company, order ny number of investors and limit to state of New York__
+### Filtering in the `WHERE` Clause
+
+When using the `WHERE` clause when joining tables, the filter happens after the tables are joined. Observations could be included when joining, but depending on what is in the `WHERE` clause, could be removed before the query is returned. 
+
+### SQL `FULL JOIN`
+
+You won't use this type of join too often, but we'll quickly review it. While the two other types of joins return unmatched rows from only one of the tables a `FULL JOIN` will return unmatched rows from __both__ tables! When used, it is often to understand the amount of overlap between two tables.
+
+## SQL `UNION`
+
+SQL `UNION` is a little different from `JOIN` in that instead of combining tables side-by-side, you are stacking one on top of the other! As a result, you can write two separate `SELECT` statements. 
+
+__Example: Use of `UNION`__
+
+	SELECT *
+    FROM tutorial.crunchbase_investments_part1
+    
+    UNION
+    
+    SELECT *
+    FROM tutorial.crunchbase_investments_part2
+    
+
+
