@@ -219,3 +219,108 @@ __Practice: Count the number of unique values in `month` column and unique value
 
 	SELECT COUNT(DISTINCT year) AS years_count, COUNT(DISTINCT month) AS months_count
     FROM tutorial.aapl_historical_stock_price
+    
+### SQL `CASE`
+
+`CASE` statements are SQL's way of handling if/then logic. It is followed by at least one pair of `WHEN` and `THEN` statements. (FYI - you might be tempted to call is `CASE WHEN` but `CASE` is the accepted term.
+
+__Example: Retrive College Players who are Seniors__
+
+	SELECT player_name,
+    	   year,
+           CASE WHEN year = 'SR' THEN 'yes'
+           		ELSE NULL END AS is_a_senior
+	FROM benn.college_football_players
+    
+Here is what is happening in the example above:
+
+1. `CASE` checks each row to see if conditional statement `year = 'SR'` is true
+2. If statement is true, 'yes' gets printed in the column named `is_a_senior`
+3. If statement is false, nothing happens and a null value is left in `is_a_senior`
+4. Additionally, SQL is retrieving and displaying all values in `player_name` & `year` columns
+
+Lastly, you can also use the value of `'no'` instead of `NULL` for players that aren't a senior. 
+
+__Practice: Query that flags players from California, and sorts the results with those players first__
+
+	SELECT player_name,
+    	   state,
+           CASE WHEN state = 'CA' THEN 'yes'
+           ELSE 'no' END AS from_california
+	FROM benn.college_football_players
+    ORDER BY from_california DESC
+    
+You can also include as many `WHEN`/`THEN` statements as you'd like!
+
+__Example: Categorizing players by weight__
+
+	SELECT player_name,
+    	   weight,
+           CASE WHEN weight > 250 THEN 'over 250'
+           		WHEN weight > 200 AND weight <= 250 THEN '201-250'
+                WHEN weight > 175 AND weight <= 200 THEN '176-200'
+           ELSE '175 or under' END AS weight_group
+    FROM benn.college_football_players
+    
+What is going on above is that all players and their weights will be returned with the addition of another column - `weight_group` - that categorizes them into a group based on their weight. Also it is best practice to not have overlapping values, which can get a little confusing. 
+
+__Practice: Gather players and classify them into four categories based on height__
+
+	SELECT player_name, 
+       	   height, 
+       	   CASE WHEN height >= 78 THEN '6ft 6in or above'
+                WHEN height >= 74 AND height < 78 THEN 'Between 6ft 2in & 6ft 5in'
+                WHEN height >= 68 AND height < 74 THEN 'Between 5ft 10in & 6ft 2in'
+                ELSE 'Below 5ft 10in' END AS height_group
+	FROM benn.college_football_players
+	ORDER BY height DESC
+    
+Can also string mutliple statements together with `AND` and `OR`, similar to how you might use with a `WHERE` clause. 
+
+__Example: Stringing together with `AND`__
+
+	SELECT player_name,
+	   	   CASE WHEN year = 'FR' AND position = 'WR' THEN 'frosh_wr'
+       	   		ELSE NULL END AS sample_case_statement
+    FROM benn.college_football_players
+    
+**Important Reminders for `CASE`**
+
+- `CASE` always goes in the `SELECT` clause
+- Must include following components: `WHEN`, `THEN`, and `END`
+	- `ELSE` is optional
+- Can make any conditional statement using any conditional operator between `WHEN` and `THEN`
+- Can include multiple `WHEN`/`ELSE` statements
+
+__Practice: Count the number of 300lb+ players by West Coast, Texas or Other Regions__
+
+	SELECT CASE WHEN state = 'CA' OR state = 'OR' OR state = 'WA' THEN 'West Coast'
+                WHEN state = 'TX' THEN 'Texas'
+                ELSE 'Rest of USA' END AS players_region,
+           COUNT(player_name)
+    FROM benn.college_football_players
+	WHERE weight >= 300
+	GROUP BY players_region
+    
+__Practice: Get combined weight of under and upperclass players in California__
+
+	SELECT CASE WHEN year IN ('FR', 'SO') THEN 'under classmen' 
+                WHEN year IN ('JR', 'SR') THEN 'upper classmen'
+                ELSE NULL END AS underclassmen_or_upperclassmen,
+       	   SUM(weight) AS total_weight
+	FROM benn.college_football_players
+	WHERE state = 'CA'
+	GROUP BY underclassmen_or_upperclassmen
+    
+__Practice: Gather number of players in each state that are FR, SO, JR, SR and the overall total__
+
+	SELECT state,
+       	   COUNT(CASE WHEN year = 'FR' THEN 1 ELSE NULL END) AS fr_count,
+       	   COUNT(CASE WHEN year = 'SO' THEN 1 ELSE NULL END) AS so_count,
+       	   COUNT(CASE WHEN year = 'JR' THEN 1 ELSE NULL END) AS jr_count,
+       	   COUNT(CASE WHEN year = 'SR' THEN 1 ELSE NULL END) AS sr_count,
+       	   COUNT(player_name) AS total_players
+	FROM benn.college_football_players
+	GROUP BY state
+
+
