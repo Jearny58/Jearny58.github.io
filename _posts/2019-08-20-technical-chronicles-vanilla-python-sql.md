@@ -416,7 +416,7 @@ __Practice: Count unique number of companies and acquired companies by state and
     GROUP BY acquire.company_state_code
     ORDER BY num_unique_acquires DESC
     
-## SQL `RIGHT JOIN`
+### SQL `RIGHT JOIN`
 
 Similar to left joins but they return all rows from the table in the `RIGHT JOIN` clause and only matching rows from the table in the `FROM` clause. Important side note - `RIGHT JOIN` is rarely used because you can simply switch the two joined tables names in a `LEFT JOIN`.
 
@@ -433,3 +433,5 @@ __Practice: Using a `RIGHT JOIN` return the same results as the practice problem
     ORDER BY num_unique_acquires DESC
     
 _Notice_ how we simply switched the tables positions!
+
+__Practice: Return company's name, 'status' and number of unique investors in that company, order ny number of investors and limit to state of New York__
