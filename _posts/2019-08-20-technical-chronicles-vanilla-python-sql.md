@@ -265,7 +265,7 @@ What is going on above is that all players and their weights will be returned wi
 __Practice: Gather players and classify them into four categories based on height__
 
 	SELECT player_name, height,
-       	   CASE WHEN height >= 78 THEN '6ft 6in or above'
+           CASE WHEN height >= 78 THEN '6ft 6in or above'
                 WHEN height >= 74 AND height < 78 THEN 'Between 6ft 2in & 6ft 5in'
                 WHEN height >= 68 AND height < 74 THEN 'Between 5ft 10in & 6ft 2in'
                 ELSE 'Below 5ft 10in' END AS height_group
