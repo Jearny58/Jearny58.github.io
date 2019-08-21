@@ -329,5 +329,38 @@ __Practice: Show number of players at schools with names starting with A-M and N
 	FROM benn.college_football_players
 	GROUP BY "School Name: Alphabetical"
 	ORDER BY COUNT(player_name) DESC
+    
+## SQL `JOINS`
+
+With SQL, you'll rarely be working with just one table (which we've been doing up to this point). But if we have more than one table, how do we access the information from each of them? One word: `JOINS`!
+
+A `JOIN` is the 'joining' of two (or more) tables based  on a common id column. Let's continue to use the table of data on college football players - `benn.college_football_players` - and connect it to another table, `benn.college_football_teams`, which is a table with information on the school. 
+
+Below is an example of a query that joina these two tables, then figures out which conference has the highest average weight!
+
+__Example: Determine which football conference has the highest average weight__
+
+	SELECT teams.conference AS conference,
+    	   AVG(players.weight) AS average_weight
+    FROM benn.college_football_players players
+    JOIN benn.college_football_teams teams
+    ON teams.school_name = players.school_name
+    GROUP BY teams.conference
+    ORDER BY AVG(players.weight) DESC
+    
+_Observations from the query above_
+
+- Notice the aliases of the two tables, `players` for `benn.college_football_players` and `teams` for `benn.college_football_teams`
+	- this makes writing out the query a lot easier!
+    - you can refer to this alias throughout the query too!
+    
+__Practice: Select school name, player name, position and weight for every player in Georgia, ordered by weight (heaviest to lightest)
+
+	SELECT teams.school_name, players.player_name, players.position, players.weight
+    FROM benn.college_football_players players
+    JOIN benn.college_football_teams teams
+    ON teams.school_name = players.school_name
+    WHERE players.state = 'GA'
+    ORDER BY players.weight DESC
 
 
