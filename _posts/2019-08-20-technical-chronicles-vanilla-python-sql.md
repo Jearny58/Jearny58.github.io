@@ -322,5 +322,15 @@ __Practice: Gather number of players in each state that are FR, SO, JR, SR and t
        	   COUNT(player_name) AS total_players
 	FROM benn.college_football_players
 	GROUP BY state
+    
+__Practice: Show number of players at schools with names starting with A-M and N-Z___
+
+	SELECT CASE WHEN school_name < 'n' THEN 'A/M'
+                WHEN school_name >= 'n' THEN 'N/Z'
+                ELSE NULL END AS "School Name: Alphabetical",
+           COUNT(player_name)
+	FROM benn.college_football_players
+	GROUP BY "School Name: Alphabetical"
+	ORDER BY COUNT(player_name) DESC
 
 
