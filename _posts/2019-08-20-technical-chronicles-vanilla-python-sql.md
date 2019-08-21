@@ -277,8 +277,8 @@ Can also string mutliple statements together with `AND` and `OR`, similar to how
 __Example: Stringing together with `AND`__
 
 	SELECT player_name,
-	   	   CASE WHEN year = 'FR' AND position = 'WR' THEN 'frosh_wr'
-       	   		ELSE NULL END AS sample_case_statement
+           CASE WHEN year = 'FR' AND position = 'WR' THEN 'frosh_wr'
+                ELSE NULL END AS sample_case_statement
     FROM benn.college_football_players
     
 **Important Reminders for `CASE`**
@@ -304,7 +304,7 @@ __Practice: Get combined weight of under and upperclass players in California__
 	SELECT CASE WHEN year IN ('FR', 'SO') THEN 'under classmen' 
                 WHEN year IN ('JR', 'SR') THEN 'upper classmen'
                 ELSE NULL END AS underclassmen_or_upperclassmen,
-       	   SUM(weight) AS total_weight
+           SUM(weight) AS total_weight
 	FROM benn.college_football_players
 	WHERE state = 'CA'
 	GROUP BY underclassmen_or_upperclassmen
@@ -312,11 +312,11 @@ __Practice: Get combined weight of under and upperclass players in California__
 __Practice: Gather number of players in each state that are FR, SO, JR, SR and the overall total__
 
 	SELECT state,
-       	   COUNT(CASE WHEN year = 'FR' THEN 1 ELSE NULL END) AS fr_count,
-       	   COUNT(CASE WHEN year = 'SO' THEN 1 ELSE NULL END) AS so_count,
-       	   COUNT(CASE WHEN year = 'JR' THEN 1 ELSE NULL END) AS jr_count,
-       	   COUNT(CASE WHEN year = 'SR' THEN 1 ELSE NULL END) AS sr_count,
-       	   COUNT(player_name) AS total_players
+           COUNT(CASE WHEN year = 'FR' THEN 1 ELSE NULL END) AS fr_count,
+           COUNT(CASE WHEN year = 'SO' THEN 1 ELSE NULL END) AS so_count,
+           COUNT(CASE WHEN year = 'JR' THEN 1 ELSE NULL END) AS jr_count,
+           COUNT(CASE WHEN year = 'SR' THEN 1 ELSE NULL END) AS sr_count,
+           COUNT(player_name) AS total_players
 	FROM benn.college_football_players
 	GROUP BY state
     
