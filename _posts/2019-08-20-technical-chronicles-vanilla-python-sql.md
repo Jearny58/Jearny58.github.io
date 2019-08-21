@@ -354,7 +354,7 @@ _Observations from the query above_
 	- this makes writing out the query a lot easier!
     - you can refer to this alias throughout the query too!
     
-__Practice: Select school name, player name, position and weight for every player in Georgia, ordered by weight (heaviest to lightest)
+__Practice: Select school name, player name, position and weight for every player in Georgia, ordered by weight (heaviest to lightest)__
 
 	SELECT teams.school_name, players.player_name, players.position, players.weight
     FROM benn.college_football_players players
@@ -363,4 +363,27 @@ __Practice: Select school name, player name, position and weight for every playe
     WHERE players.state = 'GA'
     ORDER BY players.weight DESC
 
+_Observations from the query above_
+
+- `ON` statement determines how the two tables relate to each other
+	- in this example, the two tables have a common fields called `school_name`
+    - sometimes the relational fields may be less obvious
+    - these relationships are sometimes called 'mappings'
+    - the two columns, `teams.school_name` and `players.school_name` are referred to as 'foreign keys`/'join keys'
+- in this example, SQL will look up the school name in the `school_name` field of the `teams` table
+	- if there is a match, SQL will take all columns from `teams` table and join to columns of `players` table
+    
+### SQL `INNER JOIN`
+
+It's often the case that the tables being joined contain rows that don't match in the other table, and this situation can be handled through either an **inner join** or **outer join**.
+
+An **inner join** returns the intersection of the two tables. If rows from both tables do not satisfy the `ON` statement, they are not returned. 
+
+__Practice: Gather player names, school names and conferences for schools in FBS division__
+
+	SELECT players.player_name, teams.school_name, teams.conference
+    FROM benn.college_football_players players
+    JOIN benn.college_football_teams teams
+    ON teams.school_name = players.school_name
+    WHERE teams.division = 'FBS (Division I-A Teams)'
 
