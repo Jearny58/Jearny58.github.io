@@ -207,3 +207,15 @@ __Practice: Select unique values in `year` column, in chronological order__
 	SELECT DISTINCT year
     FROM tutorial.aapl_historical_stock_price
     ORDER BY year
+    
+__Practice: Count the number of unique values in the `month` column for each year__
+
+	SELECT year, COUNT(DISTINCT month) AS months
+    FROM tutorial.aapl_historical_stock_price
+    GROUP BY year
+    ORDER BY year
+    
+__Practice: Count the number of unique values in `month` column and unique values in `year` column__
+
+	SELECT COUNT(DISTINCT year) AS years_count, COUNT(DISTINCT month) AS months_count
+    FROM tutorial.aapl_historical_stock_price
