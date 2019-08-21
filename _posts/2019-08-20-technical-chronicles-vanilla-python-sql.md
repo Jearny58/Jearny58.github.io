@@ -391,3 +391,45 @@ __Visualization to help understand `JOIN`__
 
 ![](/img/visual-join.png)
 [Source](https://mode.com/resources/sql-tutorial/sql-outer-joins/)
+
+__Practice: Perform Inner Join between acquisitions and companies table, counting the number of non-null rows in each table__
+
+	SELECT COUNT(acquire.company_name) AS acquire_rows,
+           COUNT(company.name) AS company_rows
+    FROM tutorial.crunchbase_companies company
+    JOIN tutorial.crunchbase_acquisitions acquire
+    ON company.name = acquire.company_name
+    
+### SQL `LEFT JOIN`
+
+The `LEFT JOIN` command tells the database to return all rows in the table in the `FROM` clause, regardless of whether or not they have matches in the table in the `LEFT JOIN` clause. So in our example directly above, a `LEFT JOIN` would return all the rows in the `tutorial.crunchbase_companies` table, irregardless if they matched with rows in the `tutorial.crunchbase_acquisitions` table. 
+
+__Practice: Count unique number of companies and acquired companies by state and order by number of acquired companies from highest to lowest (do not include results where there is no state data)
+
+	SELECT acquire.company_state_code,
+    	   COUNT(DISTINCT company.name) AS num_unique_companies,
+           COUNT(DISTINCT acquire.company_name) AS num_unique_acquires
+    FROM tutorial.crunchbase_companies company
+    LEFT JOIN tutorial.crunchbase_acquisitions acquire
+    ON company.name = acquire.company_name
+    WHERE acquire.company_state_code IS NOT NULL
+    GROUP BY acquire.company_state_code
+    ORDER BY num_unique_acquires DESC
+    
+## SQL `RIGHT JOIN`
+
+Similar to left joins but they return all rows from the table in the `RIGHT JOIN` clause and only matching rows from the table in the `FROM` clause. Important side note - `RIGHT JOIN` is rarely used because you can simply switch the two joined tables names in a `LEFT JOIN`.
+
+__Practice: Using a `RIGHT JOIN` return the same results as the practice problem above__
+
+	SELECT acquire.company_state_code,
+           COUNT(DISTINCT company.name) AS num_unique_companies,
+           COUNT(DISTINCT acquire.company_name) AS num_unique_acquires
+    FROM tutorial.crunchbase_acquisitions acquire
+    RIGHT JOIN tutorial.crunchbase_companies company
+    ON company.name = acquire.company_name
+    WHERE acquire.company_state_code IS NOT NULL
+    GROUP BY acquire.company_state_code
+    ORDER BY num_unique_acquires DESC
+    
+_Notice_ how we simply switched the tables positions!
