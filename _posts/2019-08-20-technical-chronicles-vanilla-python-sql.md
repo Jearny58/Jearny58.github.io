@@ -573,3 +573,15 @@ __Example: Query that ranks all results according to how many incidents were rep
           ) sub
     ON incidents.date = sub.date
     ORDER BY sub.incidents_that_day DESC, time
+    
+__Practice: Query that displays all rows from the three categories with the fewest incidents reported__
+
+	SELECT incidents.*,
+           sub.count AS incidents_in_category
+    FROM tutorial.sf_crime_incidents_cleandate incidents
+    JOIN ( SELECT category,
+                  COUNT(*) AS count
+           FROM tutorial.sf_crime_incidents_cleandate
+           GROUP BY category
+           ORDER BY count LIMIT 3) sub
+    ON sub.category = incidents.category
