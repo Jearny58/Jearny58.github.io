@@ -471,6 +471,71 @@ There are strict rules for appending data too.
 1. Tables must have same number of columns
 2. Columns must have same data types in the same order as first table
 
+## SQL Subqueries
+
+Subqueries, also known as inner queries or nested queries, are a tool for performing operations in multiple steps. Below is an example of a basic subquery using the `tutorial.sf_crime_incidents_cleandata` table. 
+
+	SELECT sub.*
+    FROM (
+    	  SELECT *
+          FROM tutorial.sf_crime_incidents_cleandate
+          WHERE day_of_week = 'Friday' 
+          ) sub
+    WHERE sub.resolution = 'NONE'
+    
+What is going on here? So subqueries are essentially queries done in steps. The first step the database takes is to run the "inner query" which gathers all the columns from the crime table where the `day_of_week` is equal to Friday. And it is important to note that these "inner queries" must actually run! In that if they were a standalone query, there wouldn't be an error. 
+
+Now what's the next step? Well this "inner query" essentially returns the table that will serve as the underlying query for future queries! Continuing with our example, the next query will then select observations from the first step query where `sub.resolution` is equal to `NONE`. 
+
+__Practice: Select all Warrant Arrests from crime dataset, then wrap it in an outer query that only displays unresolved incidents__
+
+	SELECT sub.*
+    FROM (
+    	  SELECT *
+          FROM tutorial.sf_crime_incidents_cleandate
+          WHERE descript = 'WARRANT ARREST'
+          ) sub
+    WHERE sub.resolution = 'NONE'
+    
+Consider the following question: what if you wanted to figure out how many incidents get reported on each day of the week? Better yet, what if you wanted to know how many incidents happen, on average, on a Friday in December or January? 
+
+There are two steps to this process. 
+
+1. Create an inner query that counts the number of incidents each day
+2. Determine the monthly average via the outer query
+
+Below is how we can answer this question. 
+
+	SELECT LEFT(sub.date, 2) AS cleaned_month,
+           sub.day_of_week,
+           AVG(sub.incidents) AS avg_incidents
+    FROM
+      (SELECT day_of_week, date, COUNT(incidnt_num) AS incidents
+       FROM tutorial.sf_crime_incidents_cleandate
+       GROUP BY day_of_week, date) sub
+    GROUP BY cleaned_month, sub.day_of_week
+    ORDER BY cleaned_month, sub.day_of_week
+    
+__Practice: Query the average number of monthly incidents for each crime category__
+
+	SELECT sub.category,
+           AVG(sub.incidents)
+    FROM
+      (SELECT LEFT(date, 2) AS month,
+              category,
+              COUNT(incidnt_num) AS incidents
+       FROM tutorial.sf_crime_incidents_cleandate
+       GROUP BY month, category
+       ) sub
+    GROUP BY sub.category
+    
+You can use subqueries in conjunction with `WHERE`, `JOIN`/`ON`, or `CASE`. As an example, the following query returns all the entries from the earliest date in the dataset. 
+
+	SELECT * 
+    FROM tutorial.sf_crime_incidents_cleandate
+    WHERE cleaned_date = (SELECT MIN(cleaned_date)
+                          FROM tutorial.sf_crime_incidents_cleandate)
+
 
     
 
