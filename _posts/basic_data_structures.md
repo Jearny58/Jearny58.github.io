@@ -1,3 +1,11 @@
+---
+layout: post
+published: false
+title: 'Technical Chronicles: Basic Python Data Structures'
+subtitle: Review of Basic Data Structures in Python
+date: '2019-08-22'
+image: /img/study_data_structures.gif
+---
 
 # _Data Structure Basics_
 
@@ -828,5 +836,3 @@ queue2.clear(); queue2
 
 
     deque([])
-
-
