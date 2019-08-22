@@ -2,6 +2,8 @@
 layout: post
 published: false
 title: 'Technical Chronicles: SQL'
+subtitle: SQL Review For Mock Coding Interview
+date: '2019-08-22'
 ---
 ### My Last Interview
 
