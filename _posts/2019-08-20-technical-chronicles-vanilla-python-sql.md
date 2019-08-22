@@ -132,9 +132,7 @@ You can group by multiple columns as well (just be sure to use a comma!).
 
 __Example: Group by multiple columns__
 
-	SELECT year,
-    	   month,
-           COUNT(*) AS count
+	SELECT year, month, COUNT(*) AS count
     FROM tutorial.aapl_historical_stock_price
     GROUP BY year, month
     
