@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'Technical Chronicles: Basic Python Data Structures'
 subtitle: Review of Basic Data Structures in Python
 date: '2019-08-22'
