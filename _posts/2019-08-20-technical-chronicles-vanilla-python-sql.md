@@ -1,11 +1,11 @@
 ---
 layout: post
 published: false
-title: 'Technical Chronicles: ''Vanilla'' Python & SQL'
+title: 'Technical Chronicles: SQL'
 ---
 ### My Last Interview
 
-I scheduled my last mock interview with Springboard, and I figured a good way to do a final review was to create a blog post on all the technical subjects I revisited. The first part will be focused on SQL and then I'll turn my attention to Python. Now, there is a caveat when it comes to the Python portion: it's going to be the 'vanilla' version of Python. We're not allowed to use libraries like pandas or numpy. Instead, we need to be comfortable using the [Python Standard Library](https://docs.python.org/3/library/), in addition to the following concepts:
+I scheduled my last mock interview with Springboard, and I figured a good way to do a final review was to create a blog post on all the technical subjects I revisited. This first post will be focused on SQL and then I'll turn my attention to Python. Now, there is a caveat when it comes to the Python portion: it's going to be the 'vanilla' version of Python. We're not allowed to use libraries like pandas or numpy. Instead, we need to be comfortable using the [Python Standard Library](https://docs.python.org/3/library/), in addition to the following concepts:
 
 - **Data structures** (lists, tuples, dictionaries)
 - **Flow control** (if-else, for, while loops)
@@ -13,7 +13,7 @@ I scheduled my last mock interview with Springboard, and I figured a good way to
 - The **[`collections`](https://pymotw.com/3/collections/)** library
 - Working with files
 
-Additionally, here are some of the more important SQL concepts that we'll primarily focus on:
+However, for this post we are going to be focusing on SQL, where we'll cover the concepts listed below:
 
 - **Aggregation functions** (`COUNT()`, `SUM()`, etc.)
 - **`CASE WHEN`** statements
@@ -585,3 +585,29 @@ __Practice: Query that displays all rows from the three categories with the fewe
            GROUP BY category
            ORDER BY count LIMIT 3) sub
     ON sub.category = incidents.category
+    
+At this point, you may be wondering: why do we even use subqueries at all? Well they can be very helpful in improving the performance of your queries. There is something called 'data explosion' which is the result of a concept called [cartesian products](http://en.wikipedia.org/wiki/Cartesian_product). I won't go to deep down this rabbit hole but essentially, there are times where if you **don't** use a subquery, joining tables with only a few thousand rows apiece could return a result with rows in the **millions**. Not only will this take a lot of time to load, but will probably leave you more confused than when you started! 
+
+Below is an example of a more complex query involving multiple subqueries.
+
+__Practice: Count the number of companies founded and acquired by quarter starting in Q1 2012, using two separate queries, then join them__
+
+	SELECT COALESCE(companies.quarter, acquisitions.quarter) AS quarter,
+           companies.companies_founded,
+           acquisitions.companies_acquired
+    FROM (
+           SELECT founded_quarter AS quarter,
+                  COUNT(permalink) AS companies_founded
+           FROM tutorial.crunchbase_companies
+           WHERE founded_year >= 2012
+           GROUP BY 1
+          ) companies
+    LEFT JOIN (
+                SELECT acquired_quarter AS quarter,
+                       COUNT(DISTINCT company_permalink) AS companies_acquired
+                FROM tutorial.crunchbase_acquisitions
+                WHERE acquired_year >= 2012
+                GROUP BY 1
+               ) acquisitions
+    ON companies.quarter = acquisitions.quarter
+    ORDER BY 1
