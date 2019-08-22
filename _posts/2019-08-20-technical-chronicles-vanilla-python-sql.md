@@ -535,6 +535,16 @@ You can use subqueries in conjunction with `WHERE`, `JOIN`/`ON`, or `CASE`. As a
     FROM tutorial.sf_crime_incidents_cleandate
     WHERE cleaned_date = (SELECT MIN(cleaned_date)
                           FROM tutorial.sf_crime_incidents_cleandate)
+                          
+Another tactic is to use the `IN` clause, which as a reminder is the only type of conditional logic that will work when the inner query contains multiple results.
+
+	SELECT * 
+    FROM tutorial.sf_crime_incidents_cleandate
+    WHERE cleaned_date IN (SELECT cleaned_date
+                           FROM tutorial.sf_crime_incidents_cleandate
+                           ORDER BY cleaned_date
+                           LIMIT 5
+                           )
 
 
     
