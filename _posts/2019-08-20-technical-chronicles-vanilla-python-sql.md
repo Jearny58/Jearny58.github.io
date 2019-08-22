@@ -611,3 +611,36 @@ __Practice: Count the number of companies founded and acquired by quarter starti
                ) acquisitions
     ON companies.quarter = acquisitions.quarter
     ORDER BY 1
+    
+### Subqueries and `UNION`s
+
+Not uncommon for a dataset to be split into several parts, especially if the data passed through Excel at some point. Below is an example, using `UNION` and a subquery, to combine a split dataset.
+
+__Example: Combine two datasets into one and return the total number of rows__
+
+	SELECT COUNT(*) AS total_rows
+    FROM  (
+    	   SELECT *
+           FROM tutorial.crunchbase_investments_part1
+           
+           UNION ALL
+           
+           SELECT *
+           FROM tutorial.crunchbase_investments_part2
+          ) sub
+          
+__Practice: Combine datasets and rank investors by total number of investments made__
+
+	SELECT investor_name,
+    	   COUNT(*) AS investments
+    FROM (
+    	  SELECT * 
+          FROM tutorial.crunchbase_investments_part1
+          
+          UNION ALL
+          
+          SELECT *
+          FROM tutorial.crunchbase_investments_part2
+         ) sub
+    GROUP BY investor_name
+    ORDER BY investments DESC
