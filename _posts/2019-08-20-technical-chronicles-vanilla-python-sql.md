@@ -475,7 +475,7 @@ Subqueries, also known as inner queries or nested queries, are a tool for perfor
 
 	SELECT sub.*
     FROM (
-    	  SELECT *
+          SELECT *
           FROM tutorial.sf_crime_incidents_cleandate
           WHERE day_of_week = 'Friday' 
           ) sub
@@ -489,7 +489,7 @@ __Practice: Select all Warrant Arrests from crime dataset, then wrap it in an ou
 
 	SELECT sub.*
     FROM (
-    	  SELECT *
+          SELECT *
           FROM tutorial.sf_crime_incidents_cleandate
           WHERE descript = 'WARRANT ARREST'
           ) sub
