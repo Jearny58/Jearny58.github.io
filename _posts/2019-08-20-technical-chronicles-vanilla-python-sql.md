@@ -456,5 +456,22 @@ __Example: Use of `UNION`__
     SELECT *
     FROM tutorial.crunchbase_investments_part2
     
+**Note** that `UNION` only appends distinct values, i.e. any rows in the appended table that are exactly the same as rows in the first table are dropped. If you want to append **all** values, use `UNION ALL`. 
+
+	SELECT *
+    FROM tutorial.crunchbase_investments_part1
+    
+    UNION ALL
+    
+    SELECT *
+    FROM tutorial.crunchbase_investments_part2
+    
+There are strict rules for appending data too.
+
+1. Tables must have same number of columns
+2. Columns must have same data types in the same order as first table
+
+
+    
 
 
