@@ -543,8 +543,33 @@ Another tactic is to use the `IN` clause, which as a reminder is the only type o
                            ORDER BY cleaned_date
                            LIMIT 5
                            )
+                           
+### Joining Subqueries
 
+It's fairly common to join a subquery to the same table as the outer query rather than filtering in the `WHERE` clause. 
 
+__Example: Query all entries from the earliest date in the crime dataset__
+
+	SELECT *
+    FROM tutorial.sf_crime_incidents_2014_01 incidents
+    JOIN (  SELECT date
+    		FROM tutorial.sf_crime_incidents_2014_01
+            ORDER BY date
+            LIMIT 5
+         ) sub
+    ON incidents.date = sub.date
     
+This tactic can be useful when combined with aggregations, because the requirements for the subquery output aren't as stringent as when you use the `WHERE` clause. 
 
+__Example: Query that ranks all results according to how many incidents were reported in a given day__
 
+	SELECT incidents.*,
+           sub.incidents_that_day
+    FROM tutorial.sf_crime_incidents_2014_01 incidents
+    JOIN ( SELECT date,
+                  COUNT(incidnt_num) AS incidents_that_day
+           FROM tutorial.sf_crime_incidents_2014_01 incidents
+           GROUP BY date
+          ) sub
+    ON incidents.date = sub.date
+    ORDER BY sub.incidents_that_day DESC, time
