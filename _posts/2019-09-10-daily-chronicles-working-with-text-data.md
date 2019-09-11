@@ -2,6 +2,9 @@
 layout: post
 published: false
 title: 'Daily Chronicles: Working with Text Data'
+subtitle: 'Exploring, visualizing, and modeling text'
+date: '2019-09-10'
+image: /img/working-with-text-data_21_1.png
 ---
 
 # _Analyzing A Collection of Text Documents_
