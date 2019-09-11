@@ -179,7 +179,7 @@ visualizer.poof();
 ```
 
 
-![png](working-with-text-data_files/working-with-text-data_15_0.png)
+![png](/img/working-with-text-data_15_0.png)
 
 
 So we visualized the occurrences and we can see that most of the words - like `the`, `of`, and `to` - give little to no information about context. Additionally, longer documents will have higher average count values than shorter documents, even though they may talk about the same topics. 
@@ -257,7 +257,7 @@ tsne.poof();
 
 
 
-![png](working-with-text-data_files/working-with-text-data_21_1.png)
+![png](/img/working-with-text-data_21_1.png)
 
 
 
@@ -493,7 +493,7 @@ plt.ylabel('Predicted Label');
 ```
 
 
-![png](working-with-text-data_files/working-with-text-data_37_0.png)
+![png](/img/working-with-text-data_37_0.png)
 
 
 
@@ -554,4 +554,4 @@ visualizer.poof();
 ```
 
 
-![png](working-with-text-data_files/working-with-text-data_42_0.png)
+![png](/img/working-with-text-data_42_0.png)
