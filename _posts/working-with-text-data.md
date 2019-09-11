@@ -1,6 +1,6 @@
 ---
 layout: post
-published: true
+published: false
 title: 'Daily Chronicles: Working with Text Data'
 subtitle: 'Exploring, visualizing, and modeling text'
 date: '2019-09-10'
