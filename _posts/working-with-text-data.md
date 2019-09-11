@@ -1,3 +1,8 @@
+---
+layout: post
+published: false
+title: 'Daily Chronicles: Working with Text Data'
+---
 
 # _Analyzing A Collection of Text Documents_
 
@@ -550,4 +555,3 @@ visualizer.poof();
 
 
 ![png](working-with-text-data_files/working-with-text-data_42_0.png)
-
