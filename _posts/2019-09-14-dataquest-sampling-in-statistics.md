@@ -7,7 +7,7 @@ subtitle: Work from Dataquest's Lesson on Sampling in Statistics
 image: /img/dataquest_sampling_44_0.png
 ---
 
-# _Sampling_
+# _Sampling:_
 This notebook was adapted from Dataquest's first lesson on statistics, _Sampling_. In this lesson/notebook, we'll dive deeper into the various sampling methods in statistics. 
 
 ## _Introduction_
