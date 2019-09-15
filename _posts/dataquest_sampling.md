@@ -1,3 +1,8 @@
+---
+layout: post
+published: false
+title: 'Dataquest: Sampling in Statistics'
+---
 
 # _Sampling_
 
