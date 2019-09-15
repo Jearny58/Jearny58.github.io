@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'Dataquest: Sampling in Statistics'
 date: '2019-09-14'
 subtitle: Work from Dataquest's Lesson on Sampling in Statistics
