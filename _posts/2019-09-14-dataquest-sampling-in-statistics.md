@@ -4,7 +4,7 @@ published: true
 title: 'Dataquest: Sampling in Statistics'
 date: '2019-09-14'
 subtitle: Work from Dataquest's Lesson on Sampling in Statistics
-image: /img/dataquest_sampling_44_0.pn
+image: /img/dataquest_sampling_44_0.png
 ---
 
 # _Sampling_
@@ -1231,7 +1231,7 @@ plt.axhline(np.mean(wnba['PTS']), color='red');
 ![png](/img/dataquest_sampling_39_0.png)
 
 
-## _Choosing the Right Strate_
+## _Choosing the Right Strata_
 
 Our results don't look any better than the previous one that utilized SRS. Why is this? Well, when it comes to games played, a player is considered to have played one game even if it was only for 1-2 minutes! Based off of this fact, we can see that `Games Played` may not be the best metric to stratify by. Instead we can stratify according to minutes played, which gives a better picture of exactly how much a player played. 
 
