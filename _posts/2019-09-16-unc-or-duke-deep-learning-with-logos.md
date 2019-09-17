@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: UNC or Duke?
 subtitle: Developing a DL Model with fast.ai
 date: '2019-09-16'
