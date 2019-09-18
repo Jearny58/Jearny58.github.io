@@ -5,6 +5,11 @@ title: 'Capstone Chronicles: Aug. 2, 2019'
 subtitle: Continued Analysis of Second Capstone Project
 date: '2019-08-02'
 image: /img/math_dl.gif
+excerpt: >-
+  This is the third and potentially final post of the comprehensive analysis for
+  my second capstone project. Yesterday, I had just started to talk about
+  convolutional neural networks, and what they were so that's where we'll pick
+  back up!
 ---
 ### Another day, more writing!
 This is the third and potentially final post of the comprehensive analysis for my second capstone project. Yesterday, I had just started to talk about convolutional neural networks, and what they were so that's where we'll pick back up! 
