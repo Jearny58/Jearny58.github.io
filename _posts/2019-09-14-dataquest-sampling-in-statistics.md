@@ -5,6 +5,7 @@ title: 'Dataquest: Sampling in Statistics'
 date: '2019-09-14'
 subtitle: Work from Dataquest's Lesson on Sampling in Statistics
 image: /img/dataquest_sampling_44_0.png
+excerpt: This notebook was adapted from Dataquest's first lesson on statistics, _Sampling_. In this lesson/notebook, we'll dive deeper into the various sampling methods in statistics. 
 ---
 
 # _Sampling:_
