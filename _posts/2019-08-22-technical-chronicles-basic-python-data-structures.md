@@ -1,6 +1,6 @@
 ---
 layout: post
-published: false
+published: true
 title: 'Technical Chronicles: Basic Python Data Structures'
 date: '2019-08-22'
 image: /img/study_data_structures.gif
