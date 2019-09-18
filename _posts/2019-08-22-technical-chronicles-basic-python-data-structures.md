@@ -5,7 +5,7 @@ title: 'Technical Chronicles: Basic Python Data Structures'
 date: '2019-08-22'
 image: /img/study_data_structures.gif
 subtitle: Review of Basic Data Structures in Python
-excerpt: This notebook reviews the basic Python data structures: lists, tuples, dictionaries and sets.
+excerpt: This notebook reviews the basic Python data structures: lists, tuples, dictionaries and sets...
 ---
 
 # _Data Structure Basics_
