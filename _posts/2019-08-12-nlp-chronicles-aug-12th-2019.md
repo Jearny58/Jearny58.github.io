@@ -2,6 +2,7 @@
 layout: post
 published: false
 title: 'NLP Chronicles: Aug. 12th, 2019'
+excerpt: It has come to my attention that I need a little work on my NLP (natural language processing) skills. I admit that I haven't been the best at keeping this particualr skillset up-to-date, but that is going to change and that change starts today. 
 ---
 ### NLP Review
 
