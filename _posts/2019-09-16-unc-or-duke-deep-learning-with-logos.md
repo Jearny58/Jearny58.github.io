@@ -11,7 +11,7 @@ image: /img/unc-duke_45_0.png
 
 **Introduction:**
  <!--more-->
-While listening to Lex Fridman and Jeremy Howard recently on a [podcast](https://www.youtube.com/watch?v=J6XcP4JOHmk) (highly recommend check it out!), I heard Jeremy mention that one of the best ways to become an expert DL practitioner was, essentially, to build a ton of models (with data your interested in of course)! <!--more-->
+While listening to Lex Fridman and Jeremy Howard recently on a [podcast](https://www.youtube.com/watch?v=J6XcP4JOHmk) (highly recommend check it out!), I heard Jeremy mention that one of the best ways to become an expert DL practitioner was, essentially, to build a ton of models (with data your interested in of course)!
 
 So that is the aim of this notebook: to generate a deep learning model to predict something I'm interested in. More specifically, we'll be using a data set of images that contain UNC's or Duke's logo, and training it to recognize each one! 
 
