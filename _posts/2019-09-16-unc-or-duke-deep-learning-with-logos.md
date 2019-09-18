@@ -5,6 +5,7 @@ title: UNC or Duke?
 subtitle: Developing a DL Model with fast.ai
 date: '2019-09-16'
 image: /img/unc-duke_45_0.png
+excerpt: While listening to Lex Fridman and Jeremy Howard recently on a podcast (highly recommend check it out!), I heard Jeremy mention that one of the best ways to become an expert DL practitioner was...
 ---
 
 # _UNC or Duke: Deep Learning with Logos_
