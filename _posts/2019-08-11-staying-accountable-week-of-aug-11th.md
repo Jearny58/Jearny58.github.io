@@ -5,6 +5,7 @@ title: 'Staying Accountable: Week of Aug. 11th'
 subtitle: 3 Primary Goals for the Week
 date: '2019-08-11'
 image: /img/the_joker_here_we_go.gif
+excerpt: I almost forgot to review my weekly goals! When you're getting started with any new activity/habit, the hardest thing is often just doing the work. Well, here I am putting in the work! 
 ---
 ### How did I do from last week?
 
