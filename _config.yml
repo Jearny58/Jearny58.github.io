@@ -232,6 +232,12 @@ prose:
           label: "Subtitle"
           placeholder: "A description of your post."
           alterable: true
+      - name: "excerpt"
+        field:
+          element: "text"
+          label: "Post Excerpt"
+          placeholder: "Excerpt"
+          alterable: true
       - name: "date"
         field:
           element: "text"
