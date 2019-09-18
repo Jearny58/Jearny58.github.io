@@ -5,6 +5,7 @@ title: 'Technical Chronicles: SQL'
 subtitle: SQL Review For Mock Coding Interview
 date: '2019-08-22'
 image: /img/sql-training.jpg
+excerpt: I scheduled my last mock interview with Springboard, and I figured a good way to do a final review was to create a blog post on all the technical subjects I revisited. This first post will...
 ---
 ### My Last Interview
 
