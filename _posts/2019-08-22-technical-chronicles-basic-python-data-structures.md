@@ -5,13 +5,14 @@ title: 'Technical Chronicles: Basic Python Data Structures'
 subtitle: Review of Basic Data Structures in Python
 date: '2019-08-22'
 image: /img/study_data_structures.gif
+excerpt: This notebook reviews the basic Python data structures: lists, tuples, dictionaries and sets. Before I begin though want to acknowledge Chris Albon...
 ---
 
 # _Data Structure Basics_
 
 This notebook reviews the basic Python data structures: lists, tuples, dictionaries and sets. 
 
-Before I begint though want to acknowledge [Chris Albon](https://chrisalbon.com/) and his awesome Python tutorials! This and other notebooks have been adapted from a conglomeration of lessons on his website, which can be found [here](https://chrisalbon.com). There are slight tweaks but the foundation was definitely set by Chris, so thank you again for putting out this material. It is fantastic!
+Before I begin though want to acknowledge [Chris Albon](https://chrisalbon.com/) and his awesome Python tutorials! This and other notebooks have been adapted from a conglomeration of lessons on his website, which can be found [here](https://chrisalbon.com). There are slight tweaks but the foundation was definitely set by Chris, so thank you again for putting out this material. It is fantastic!
 
 ## _Basic Python Data Structures_
 
