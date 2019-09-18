@@ -5,6 +5,9 @@ title: 'Capstone Chronicles: Aug. 5, 2019'
 subtitle: Last Part of Analysis for Second Capstone Project
 date: '2019-08-05'
 image: /img/auroc_curve.png
+excerpt: >-
+  As indicated in my weekly accountability post, my main goal for this week is
+  to finish the comprehensive analysis of my second capstone project.
 ---
 ### Another Day, Another Capstone Chronicle!
 
@@ -94,4 +97,4 @@ Overall, this has been a very challenging but overall highly rewarding project. 
 
 This is just the first step of my deep learning journey, though, and I'll be looking to continue to grow my body of knowledge related to the subject. In particular, I hope to continue to combine the technical with the medical and hopefully contribute to healthcare in such a way that helps people live healthier and happier lives. 
 
-Thank you for taking the time to read this analysis and hope you got some valuable insights along the way. However, with that being said, it's time to get back to work! 
+Thank you for taking the time to read this analysis and hope you got some valuable insights along the way. However, with that being said, it's time to get back to work!
