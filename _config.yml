@@ -150,6 +150,8 @@ staticman:
 # Excerpt Word Length
 # Truncates the excerpt to the specified number of words on the index page
 excerpt_length: 50
+# add variable excerpt_separator to (hopefully) allow for custom excerpts that look better on the blog
+excerpt_separator: <!--more-->
 
 # Character used to separate site title and description in HTML document title
 # and RSS feed title
