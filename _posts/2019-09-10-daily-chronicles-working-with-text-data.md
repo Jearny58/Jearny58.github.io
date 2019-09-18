@@ -5,6 +5,7 @@ title: 'Daily Chronicles: Working with Text Data'
 subtitle: 'Exploring, visualizing, and modeling text'
 date: '2019-09-10'
 image: /img/working-with-text-data_21_1.png
+excerpt: This notebook was adapted from scikit-learn's lesson titled 'Working With Text Data' which walks through the following...
 ---
 
 # _Analyzing A Collection of Text Documents_
