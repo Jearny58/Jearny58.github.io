@@ -1,3 +1,16 @@
+---
+layout: post
+published: true
+title: 'Daily Deep Work: Round 2'
+excerpt: >-
+  In the previous notebook, we utilized a `resnet34` architecture and achieved
+  admirable initial results. However, I need to revisit the
+  documentation/lessons to see if there are any other strategies I could use to
+  extract more performance from that particular architecture. 
+date: '2019-09-20'
+subtitle: Mmmm...garlic bread...
+image: /img/trial3-food101_47_0.png
+---
 # _Trial 3: fellowship.ai Food-101 Challenge_
 
 **_From fellowship.ai's website:_**
@@ -508,7 +521,7 @@ data.show_batch(rows=3, figsize=(8,8))
 ```
 
 
-![png](trial3-food101_files/trial3-food101_17_0.png)
+![png](/img/trial3-food101_17_0.png)
 
 
 
@@ -572,7 +585,7 @@ resnet50.recorder.plot(suggestion=True)
 
 
 
-![png](trial3-food101_files/trial3-food101_23_1.png)
+![png](/img/trial3-food101_23_1.png)
 
 
 What exactly are we looking at here? On the X-axis, we have the learning rates, which starts at `1e-07` and ends at `10`. On the Y-axis, we have the `Loss`. Ok so we know that we're trying to minimize our `Loss` but what does `Loss` even mean?
@@ -698,7 +711,7 @@ resnet50.recorder.plot_losses()
 ```
 
 
-![png](trial3-food101_files/trial3-food101_27_0.png)
+![png](/img/trial3-food101_27_0.png)
 
 
 
@@ -745,7 +758,7 @@ resnet50.recorder.plot(suggestion=True)
 
 
 
-![png](trial3-food101_files/trial3-food101_33_1.png)
+![png](/img/trial3-food101_33_1.png)
 
 
 ## _Reset: Increase Image Size, Unfreeze Lower Layers and Continue Training_
@@ -775,7 +788,7 @@ data_224.show_batch(rows=3, figsize=(7,7))
 ```
 
 
-![png](trial3-food101_files/trial3-food101_38_0.png)
+![png](/img/trial3-food101_38_0.png)
 
 
 
@@ -808,7 +821,7 @@ resnet50.recorder.plot(suggestion=True)
 
 
 
-![png](trial3-food101_files/trial3-food101_41_1.png)
+![png](/img/trial3-food101_41_1.png)
 
 
 
@@ -933,7 +946,7 @@ resnet50.recorder.plot_losses()
 ```
 
 
-![png](trial3-food101_files/trial3-food101_44_0.png)
+![png](/img/trial3-food101_44_0.png)
 
 
 
@@ -961,7 +974,7 @@ data_224.train_ds[0][0]
 
 
 
-![png](trial3-food101_files/trial3-food101_47_0.png)
+![png](/img/trial3-food101_47_0.png)
 
 
 
@@ -1003,7 +1016,7 @@ for change, ax in zip([0.0, 0.1, 0.25, 0.5, 0.75, 0.9, 1.0], axs):
 ```
 
 
-![png](trial3-food101_files/trial3-food101_52_0.png)
+![png](/img/trial3-food101_52_0.png)
 
 
 ### _Transform 2: `contrast`_
@@ -1021,7 +1034,7 @@ for scale, ax in zip(np.exp(np.linspace(log(0.25),log(2),7)), axs):
 ```
 
 
-![png](trial3-food101_files/trial3-food101_54_0.png)
+![png](/img/trial3-food101_54_0.png)
 
 
 ### _Transform 3: `crop`_
@@ -1036,7 +1049,7 @@ for center, ax in zip([[0.,0.], [0.,1.],[0.5,0.5],[1.,0.], [1.,1.]], axs):
 ```
 
 
-![png](trial3-food101_files/trial3-food101_56_0.png)
+![png](/img/trial3-food101_56_0.png)
 
 
 These are the first three transformations, but we have a few left to review:
